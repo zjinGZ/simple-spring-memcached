@@ -1,35 +1,35 @@
 #summary The planned steps to get to a 1.0 release.
 #labels Phase-Requirements
 
-= Base Assumptions =
+== Base Assumptions ==
   * Each version fully unit tested
   * Each version fully integration tested
 
-= 0.1 =
+== 0.1 ==
   * Read-through individual item cache
 
-= 0.2 =
+== 0.2 ==
   * Read-through multiplexed item cache
 
-= 0.3 =
+== 0.3 ==
   * Update individual item cache
 
-= 0.4 =
+== 0.4 ==
   * Update multiplexed item cache
 
-= 0.5 =
+== 0.5 ==
   * Invalidate individual item cache
 
-= 0.6 =
+== 0.6 ==
   * Invalidate multiplexed item cache
 
-= 0.7 =
+== 0.7 ==
   * Read-through individual item cache by assigned id
 
-= 0.8 =
+== 0.8 ==
   * Read-through multiplexed item cache by assigned id
 
-= Further =
+== Further ==
   * Namespace invalidation
   * Namespace cataloging
   * Runtime memcached node switching
