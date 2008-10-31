@@ -33,3 +33,6 @@
   * Namespace invalidation
   * Namespace cataloging
   * Runtime memcached node switching
+  * anti-stampeding support?
+  * "Soft" expirations?
+  * blocking cache gets (a la Ehcache BlockingCache)?
