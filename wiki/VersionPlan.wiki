@@ -5,7 +5,7 @@
   * Each version fully unit tested
   * Each version fully integration tested
 
-== 0.1 ==
+== ~~0.1~~ (Done) ==
   * Read-through individual item cache
 
 == 0.2 ==
