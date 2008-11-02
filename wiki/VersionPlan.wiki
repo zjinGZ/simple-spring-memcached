@@ -35,4 +35,6 @@
   * Runtime memcached node switching
   * anti-stampeding support?
   * "Soft" expirations?
-  * blocking cache gets (a la Ehcache BlockingCache)?
+  * blocking cache gets (a la Ehcache Blocking Cache)?
+  * JMX Mgmt
+  * Cache Disabling
