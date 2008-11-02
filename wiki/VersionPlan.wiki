@@ -38,3 +38,4 @@
   * blocking cache gets (a la Ehcache Blocking Cache)?
   * JMX Mgmt
   * Cache Disabling
+  * Client pooling
