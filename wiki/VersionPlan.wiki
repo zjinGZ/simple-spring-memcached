@@ -39,3 +39,4 @@
   * JMX Mgmt
   * Cache Disabling
   * Client pooling
+  * Provide a class/bean name to process input params
