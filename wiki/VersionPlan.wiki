@@ -42,3 +42,4 @@
   * Provide a class/bean name to process input params
   * Access to Memcached stats (plus decorations for %ages)
   * Internal stats
+  * Multiple logical memcached nodes
