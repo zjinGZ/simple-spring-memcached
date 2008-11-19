@@ -30,6 +30,7 @@
   * Read-through multiplexed item cache by assigned id
 
 == Further ==
+  * Instead of using keyIndex = -1 to mean the return value holds the key, change the meaning of -1 to signify assigned ID. (Doesn't work for multi-cache annotations.)
   * Namespace invalidation
   * Namespace cataloging
   * Runtime memcached node switching
