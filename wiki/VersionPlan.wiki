@@ -11,7 +11,7 @@
 == ~~0.2~~ (Done) ==
   * Read-through multiplexed item cache
 
-== 0.3 ==
+== ~~0.3~~ (Done) ==
   * Update individual item cache
 
 == 0.4 ==
