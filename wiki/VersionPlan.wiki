@@ -45,3 +45,4 @@
   * Internal stats
   * Multiple logical memcached nodes
   * Built-in second-level cache?
+  * How to handle updates/invalidates to multiple items
