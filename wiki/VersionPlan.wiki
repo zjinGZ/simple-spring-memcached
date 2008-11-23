@@ -44,3 +44,4 @@
   * Access to Memcached stats (plus decorations for %ages)
   * Internal stats
   * Multiple logical memcached nodes
+  * Built-in second-level cache?
