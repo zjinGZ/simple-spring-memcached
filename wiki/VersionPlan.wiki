@@ -14,7 +14,7 @@
 == ~~0.3~~ (Done) ==
   * Update individual item cache
 
-== 0.4 ==
+== ~~0.4~~ (Done) ==
   * Update multiplexed item cache
 
 == 0.5 ==
