@@ -20,14 +20,20 @@
 == ~~0.5~~ (Done) ==
   * Invalidate individual item cache
 
-== 0.6 ==
+== ~~0.6~~ ==
   * Invalidate multiplexed item cache
 
 == 0.7 ==
   * Read-through individual item cache by assigned id
 
 == 0.8 ==
-  * Read-through multiplexed item cache by assigned id
+  * Update individual item cache by assigned id
+
+== 0.9 ==
+  * Invalidate individual item cache by assigned id
+
+== 0.9.9 ==
+  * DOCUMENTATION IN PREPARATION FOR 1.0 RELEASE
 
 == Further ==
   * Instead of using keyIndex = -1 to mean the return value holds the key, change the meaning of -1 to signify assigned ID. (Doesn't work for multi-cache annotations.)
