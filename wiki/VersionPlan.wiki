@@ -23,7 +23,7 @@
 == ~~0.6~~ (Done) ==
   * Invalidate multiplexed item cache
 
-== 0.7 ==
+== ~~0.7~~ (Done) ==
   * Read-through individual item cache by assigned id
 
 == 0.8 ==
