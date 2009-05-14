@@ -27,10 +27,10 @@
   * Read-through individual item cache by assigned id
 
 == 0.8 ==
-  * Update individual item cache by assigned id
+  * Invalidate individual item cache by assigned id
 
 == 0.9 ==
-  * Invalidate individual item cache by assigned id
+  * Update individual item cache by assigned id
 
 == 0.9.9 ==
   * DOCUMENTATION IN PREPARATION FOR 1.0 RELEASE
@@ -52,3 +52,5 @@
   * Multiple logical memcached nodes
   * Built-in second-level cache?
   * How to handle updates/invalidates to multiple items
+  * 'Observer' pattern access for writes/reads/updates/deletes
+  * Thread name/id on logging?
