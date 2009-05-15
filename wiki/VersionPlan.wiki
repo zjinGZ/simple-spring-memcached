@@ -26,13 +26,13 @@
 == ~~0.7~~ (Done) ==
   * Read-through individual item cache by assigned id
 
-== 0.8 ==
+== ~~0.8~~ (Done) ==
   * Invalidate individual item cache by assigned id
 
 == 0.9 ==
   * Update individual item cache by assigned id
 
-== 0.9.9 ==
+== 0.10 ==
   * DOCUMENTATION IN PREPARATION FOR 1.0 RELEASE
 
 == Further ==
@@ -54,3 +54,4 @@
   * How to handle updates/invalidates to multiple items
   * 'Observer' pattern access for writes/reads/updates/deletes
   * Thread name/id on logging?
+  * Accept a Spring bean name as the converter from parameters to ids
