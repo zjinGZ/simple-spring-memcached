@@ -33,6 +33,9 @@
   * Update individual item cache by assigned id
 
 == 0.10 ==
+  * Fix Update*Cache. They assume the output is the source of the cachable data.
+
+== 0.11 ==
   * DOCUMENTATION IN PREPARATION FOR 1.0 RELEASE
 
 == Further ==
