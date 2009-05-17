@@ -29,7 +29,7 @@
 == ~~0.8~~ (Done) ==
   * Invalidate individual item cache by assigned id
 
-== 0.9 ==
+== ~~0.9~~ (Done) ==
   * Update individual item cache by assigned id
 
 == 0.10 ==
@@ -39,7 +39,7 @@
   * DOCUMENTATION IN PREPARATION FOR 1.0 RELEASE
 
 == Further ==
-  * Instead of using keyIndex = -1 to mean the return value holds the key, change the meaning of -1 to signify assigned ID. (Doesn't work for multi-cache annotations.)
+  * Instead of using keyIndex = -1 to mean the return value holds the key, change the meaning of -1 to signify assigned ID? (Doesn't work for multi-cache annotations.)
   * Namespace invalidation
   * Namespace cataloging
   * Runtime memcached node switching
