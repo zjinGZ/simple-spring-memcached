@@ -32,7 +32,7 @@
 == ~~0.9~~ (Done) ==
   * Update individual item cache by assigned id
 
-== 0.10 ==
+== ~~0.10~~ (Done) ==
   * Fix Update*Cache. They assume the output is the source of the cachable data.
 
 == 0.11 ==
