@@ -1,0 +1,23 @@
+#summary Ideas for possible future inclusion
+#labels Phase-Requirements,Phase-Design
+
+== Further Ideas ==
+  * Instead of using keyIndex = -1 to mean the return value holds the key, change the meaning of -1 to signify assigned ID? (Doesn't work for multi-cache annotations.)
+  * Namespace invalidation
+  * Namespace cataloging
+  * Runtime memcached node switching
+  * anti-stampeding support?
+  * "Soft" expirations?
+  * blocking cache gets (a la Ehcache Blocking Cache)?
+  * JMX Mgmt
+  * Cache Disabling
+  * Client pooling
+  * Provide a class/bean name to process input params
+  * Access to Memcached stats (plus decorations for %ages)
+  * Internal stats
+  * Multiple logical memcached nodes
+  * Built-in second-level cache?
+  * How to handle updates/invalidates to multiple items
+  * 'Observer' pattern access for writes/reads/updates/deletes
+  * Thread name/id on logging?
+  * Accept a Spring bean name as the converter from parameters to ids
