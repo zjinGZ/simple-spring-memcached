@@ -21,3 +21,6 @@
   * 'Observer' pattern access for writes/reads/updates/deletes
   * Thread name/id on logging?
   * Accept a Spring bean name as the converter from parameters to ids
+
+== Requested Features ==
+  * Provide a way for a single value to be referred to by several keys ("secondary keys")
