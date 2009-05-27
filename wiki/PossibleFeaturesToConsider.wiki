@@ -23,4 +23,4 @@
   * Accept a Spring bean name as the converter from parameters to ids
 
 == Requested Features ==
-  * Provide a way for a single value to be referred to by several keys ("secondary keys")
+  * Provide a way for a single value to be referred to by several keys (either multiple-keys or primary-and-secondary keys)
