@@ -1,39 +1,57 @@
-#summary The planned steps to get to a 1.0 release.
+#summary The current plan for the upcoming releases.
 #labels Phase-Requirements
 
 == Base Assumptions ==
   * Each version fully unit tested
   * Each version fully integration tested
+---
+= Version 2 =
 
-== ~~0.1~~ (Done) ==
-  * Read-through individual item cache
+== 2.0.0 (_In Progress_) ==
+  * Update to use Annotations, rather than an integer _keyIndex_, to identify the object that will provide the key.
 
-== ~~0.2~~ (Done) ==
-  * Read-through multiplexed item cache
+== 2.1.0 ==
+  * Add the ability for the key generation to be done via a referenced bean that adheres to a SSM-specified interface.
 
-== ~~0.3~~ (Done) ==
-  * Update individual item cache
+---
+= Version 1 =
 
-== ~~0.4~~ (Done) ==
-  * Update multiplexed item cache
+== ~~1.0.0~~ ==
+  * If there's no problems with RC1, publish a full 1.0 version
 
-== ~~0.5~~ (Done) ==
-  * Invalidate individual item cache
+== ~~1.0.0-RC1~~
+  * Package up a 'code complete' set for release to the wild.
 
-== ~~0.6~~ (Done) ==
-  * Invalidate multiplexed item cache
-
-== ~~0.7~~ (Done) ==
-  * Read-through individual item cache by assigned id
-
-== ~~0.8~~ (Done) ==
-  * Invalidate individual item cache by assigned id
-
-== ~~0.9~~ (Done) ==
-  * Update individual item cache by assigned id
+== ~~0.11~~ (Done) ==
+  * DOCUMENTATION IN PREPARATION FOR 1.0 RELEASE
 
 == ~~0.10~~ (Done) ==
   * Fix Update*Cache. They assume the output is the source of the cachable data.
 
-== 0.11 ==
-  * DOCUMENTATION IN PREPARATION FOR 1.0 RELEASE
+== ~~0.9~~ (Done) ==
+  * Update individual item cache by assigned id
+
+== ~~0.8~~ (Done) ==
+  * Invalidate individual item cache by assigned id
+
+== ~~0.7~~ (Done) ==
+  * Read-through individual item cache by assigned id
+
+== ~~0.6~~ (Done) ==
+  * Invalidate multiplexed item cache
+
+== ~~0.5~~ (Done) ==
+  * Invalidate individual item cache
+
+== ~~0.4~~ (Done) ==
+  * Update multiplexed item cache
+
+== ~~0.3~~ (Done) ==
+  * Update individual item cache
+
+== ~~0.2~~ (Done) ==
+  * Read-through multiplexed item cache
+
+== ~~0.1~~ (Done) ==
+  * Read-through individual item cache
+
