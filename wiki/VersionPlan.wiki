@@ -16,10 +16,10 @@
 ----
 = Version 1 =
 
-== ~~1.0.0~~ ==
+== ~~1.0.0~~ (Done) ==
   * If there's no problems with RC1, publish a full 1.0 version
 
-== ~~1.0.0-RC1~~ ==
+== ~~1.0.0-RC1~~ (Done) ==
   * Package up a 'code complete' set for release to the wild.
 
 == ~~0.11~~ (Done) ==
