@@ -4,7 +4,7 @@
 == Base Assumptions ==
   * Each version fully unit tested
   * Each version fully integration tested
----
+----
 = Version 2 =
 
 == 2.0.0 (_In Progress_) ==
@@ -13,7 +13,7 @@
 == 2.1.0 ==
   * Add the ability for the key generation to be done via a referenced bean that adheres to a SSM-specified interface.
 
----
+----
 = Version 1 =
 
 == ~~1.0.0~~ ==
