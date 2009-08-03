@@ -9,8 +9,6 @@
 
 == 2.0.0 (_In Progress_) ==
   * Update to use Annotations, rather than an integer _keyIndex_, to identify the object that will provide the key.
-
-== 2.1.0 ==
   * Add the ability for the key generation to be done via a referenced bean that adheres to a SSM-specified interface.
 
 ----
