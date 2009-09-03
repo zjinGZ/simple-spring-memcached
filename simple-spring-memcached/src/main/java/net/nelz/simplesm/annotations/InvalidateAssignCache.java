@@ -1,9 +1,4 @@
-package net.nelz.simplesm.api;
-
-import java.lang.annotation.Retention;
-import java.lang.annotation.RetentionPolicy;
-import java.lang.annotation.Target;
-import java.lang.annotation.ElementType;
+package net.nelz.simplesm.annotations;
 
 /**
 Copyright (c) 2008, 2009  Nelson Carpentier
@@ -26,9 +21,7 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
  */
-@Retention(RetentionPolicy.RUNTIME)
-@Target(ElementType.METHOD)
-public @interface InvalidateMultiCache {
+public @interface InvalidateAssignCache {
     /**
      * A namespace that is added to the key as it is stored in the distributed cache.
      * This allows differing object that may have the same ID to coexist.
@@ -38,12 +31,10 @@ public @interface InvalidateMultiCache {
     String namespace() default AnnotationConstants.DEFAULT_STRING;
 
     /**
-     * Of the arguments passed into the cached method, this identifies which
-     * argument provides the id by which the object will be cached. This is a
-     * 0-based array index. This annotation also takes a special value of -1 to signify
-     * that the object being returned is the object responsible for providing the cache key.
-     * @return the index into the arguments array for the item that will provide the id
+     * A single key that is invalidate after this method finishes. This key
+     * will be combined with the <code>namespace()</code> value to be used in the distributed cache.
+     * This value must be assigned.
+     * @return the assigned key for the given data
      */
-    int keyIndex() default 0;
-
+    String assignedKey() default AnnotationConstants.DEFAULT_STRING;
 }

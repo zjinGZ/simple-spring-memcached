@@ -1,4 +1,4 @@
-package net.nelz.simplesm.api;
+package net.nelz.simplesm.annotations;
 
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
@@ -28,7 +28,7 @@ THE SOFTWARE.
  */
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.METHOD)
-public @interface InvalidateAssignCache {
+public @interface UpdateAssignCache {
     /**
      * A namespace that is added to the key as it is stored in the distributed cache.
      * This allows differing object that may have the same ID to coexist.
@@ -38,10 +38,37 @@ public @interface InvalidateAssignCache {
     String namespace() default AnnotationConstants.DEFAULT_STRING;
 
     /**
-     * A single key that is invalidate after this method finishes. This key
+     * A single key that is updated with data in this method. This key
      * will be combined with the <code>namespace()</code> value to be used in the distributed cache.
      * This value must be assigned.
      * @return the assigned key for the given data
      */
     String assignedKey() default AnnotationConstants.DEFAULT_STRING;
+
+    /**
+     * Since keys and the actual data to be cached may be different, we also need to know which
+     * parameter (or output) holds the data that we should update the cache with. This is a
+	 * 0-based array index. This annotation also takes a special value of -1 to signify
+	 * that the object being returned is the data that should be cached.
+     * @return the index into the argument array that holds the actual data to be cached
+     */
+    int dataIndex() default Integer.MIN_VALUE;
+
+    /**
+     *  The exp value is passed along to memcached exactly as given, and will be
+     * processed per the memcached protocol specification:
+     *
+     * The actual value sent may either be Unix time (number of seconds since January 1, 1970,
+     * as a 32-bit value), or a number of seconds starting from current time. In the latter case,
+     * this number of seconds may not exceed 60*60*24*30 (number of seconds in 30 days); if the
+     * number sent by a client is larger than that, the server will consider it to be real Unix
+     * time value rather than an offset from current time.
+     *
+     * (Also note: a value of 0 means the given value should never expire. The value is still
+     * susceptible to purging by memcached for space and LRU (least recently used) considerations.)
+     *
+     * @return
+     */
+    int expiration() default 0;
+
 }

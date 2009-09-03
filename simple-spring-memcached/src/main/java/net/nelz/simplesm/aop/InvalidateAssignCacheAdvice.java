@@ -10,7 +10,8 @@ import org.apache.commons.logging.LogFactory;
 import java.lang.reflect.Method;
 import java.security.InvalidParameterException;
 
-import net.nelz.simplesm.api.InvalidateAssignCache;
+import net.nelz.simplesm.annotations.InvalidateSingleCache;
+import net.nelz.simplesm.annotations.InvalidateAssignCache;
 
 /**
 Copyright (c) 2008, 2009  Nelson Carpentier
@@ -37,7 +38,7 @@ THE SOFTWARE.
 public class InvalidateAssignCacheAdvice extends CacheBase {
     private static final Log LOG = LogFactory.getLog(InvalidateAssignCacheAdvice.class);
 
-    @Pointcut("@annotation(net.nelz.simplesm.api.InvalidateAssignCache)")
+    @Pointcut("@annotation(net.nelz.simplesm.annotations.InvalidateAssignCache)")
     public void invalidateAssign() {}
 
     @Around("invalidateAssign()")

@@ -1,6 +1,4 @@
-package net.nelz.simplesm.api;
-
-import java.lang.annotation.*;
+package net.nelz.simplesm.annotations;
 
 /**
 Copyright (c) 2008, 2009  Nelson Carpentier
@@ -23,7 +21,6 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
  */
-@Retention(RetentionPolicy.RUNTIME)
-@Target(ElementType.METHOD)
-public @interface CacheKeyMethod {
+public interface AnnotationConstants {
+	public static final String DEFAULT_STRING = "[unassigned]";
 }

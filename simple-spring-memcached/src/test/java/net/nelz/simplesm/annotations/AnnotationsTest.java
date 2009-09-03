@@ -1,4 +1,10 @@
-package net.nelz.simplesm.api;
+package net.nelz.simplesm.annotations;
+
+import static org.testng.AssertJUnit.*;
+import org.testng.annotations.*;
+
+import java.lang.annotation.*;
+import java.lang.reflect.*;
 
 /**
 Copyright (c) 2008, 2009  Nelson Carpentier
@@ -21,8 +27,28 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
  */
-public interface AnnotationConstants {
-	public static final String DEFAULT_STRING = "[unassigned]";
+public class AnnotationsTest {
 
-    public static final String DEFAULT_KEY_PROVIDER_BEAN_NAME = "net.nelz.simplesm.DefaultKeyProvider";
+	@Test
+	public void testIndividual() throws Exception {
+		final Method method = RandomClass.class.getMethod("getName", null);
+		final Annotation[] annotations = method.getDeclaredAnnotations();
+		assertEquals(ReadThroughSingleCache.class, annotations[0].annotationType());
+		final ReadThroughSingleCache ind = (ReadThroughSingleCache) annotations[0];
+		assertEquals("polk", ind.namespace());
+		assertEquals(5, ind.keyIndex());
+	}
+
+	private static class RandomClass {
+		private String name = "RandomClass";
+
+		@ReadThroughSingleCache(namespace="polk", keyIndex = 5)
+		public String getName() {
+			return name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
+		}
+	}
 }

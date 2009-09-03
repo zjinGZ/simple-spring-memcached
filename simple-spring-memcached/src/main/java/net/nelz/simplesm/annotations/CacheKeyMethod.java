@@ -1,6 +1,6 @@
-package net.nelz.simplesm.api;
+package net.nelz.simplesm.annotations;
 
-import java.util.List;
+import java.lang.annotation.*;
 
 /**
 Copyright (c) 2008, 2009  Nelson Carpentier
@@ -23,22 +23,7 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
  */
-public interface KeyProvider {
-    /**
-     * From the supplied object, create a (no-whitespace) key by which a value
-     * will be stored in Memcached.
-     * (Hint: This value, plus the Namespace value, should be no longer
-     * than 250 characters.)
-     * @param keyObject
-     * @return
-     */
-    String generateKey(Object keyObject);
-
-    /**
-     * This is the multi-plexed version of <code>generateKey(...)</code>
-     * @param keyObjects
-     * @return
-     */
-    List<String> generateKeys(List<Object> keyObjects);
-    
+@Retention(RetentionPolicy.RUNTIME)
+@Target(ElementType.METHOD)
+public @interface CacheKeyMethod {
 }

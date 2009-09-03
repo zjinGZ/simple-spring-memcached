@@ -1,8 +1,10 @@
 package net.nelz.simplesm.aop;
 
 import static org.testng.AssertJUnit.*;
-import net.nelz.simplesm.api.*;
+import net.nelz.simplesm.annotations.*;
 import org.testng.annotations.*;
+
+import java.lang.reflect.*;
 
 /**
 Copyright (c) 2008, 2009  Nelson Carpentier
