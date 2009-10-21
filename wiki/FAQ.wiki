@@ -14,3 +14,7 @@ Here's an example:
 }}}
 A feature request has been added to consider providing multi-key or primary-and-secondary support natively, but for the time being, this pattern can effectively get you to where you need.
 (Thanks to Ben Manes, of the [http://code.google.com/p/concurrentlinkedhashmap/ concurrentlinkedhashmap] project for challenging me with this question.)
+
+= Why use `toString()` rather than `hashCode()` for generating keys?
+(This question was asked on the feedback page from my presentation at SVCC.)
+_To Be Added._
