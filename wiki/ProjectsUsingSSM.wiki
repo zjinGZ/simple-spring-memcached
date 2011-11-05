@@ -1,6 +1,6 @@
 #summary User list
 #labels Phase-Support
 
-* [http://nk.pl Nasza Klasa]
+* [http://nk.pl nk.pl]
 
 *Let us know if you are using Simple-Spring-Memcached in your project and you are not in this list!*
