@@ -9,7 +9,7 @@
 
 == 2.0.0 (_In Progress_) ==
   * Inline parameter annotation, rather than an integer _keyIndex_, to identify the object that will provide the key
-  * Cache key can be generated using several method's parameters
+  * Cache key can be generated using several input method's parameters
   * Counters support: increment, decrement, update (overwrite) and read
   * ~~Ability for the key generation to be done via a referenced bean that adheres to a SSM-specified interface~~
   * Runtime memcached node switching. IPs of memcached servers can be modified in the fly without redeploying application
