@@ -18,9 +18,10 @@
   * Integration with Spring 3
   * Order of missed keys are the same as order of input argument in intercepted method
   * Extend ReadThroughMultiCache with options to:
-  ** generate cache key from result, objects from result will be added to cache not by concatenating method arguments but invoking  CacheKeyMethod on each object in result list
-  ** skip null values in result
-  ** add null values to cache under keys that don't occurred in result list  
+    * generate cache key from result, objects from result will be added to cache not by concatenating method arguments but invoking  CacheKeyMethod on each object in result list
+    * skip null values in result
+    * add null values to cache under keys that don't occurred in result list
+  * Deploy to maven central repository  
 
 ----
 = Version 1 =
