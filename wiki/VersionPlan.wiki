@@ -8,15 +8,15 @@
 = Version 2 =
 
 == 2.0.0 (_In Progress_) ==
-  * Inline parameter annotation, rather than an integer _keyIndex_, to identify the object that will provide the key
+  * Inline parameter annotation, rather than an integer _keyIndex_, to identify the object that will provide the key (*Done*)
   * Cache key can be generated using several input method's parameters
-  * Counters support: increment, decrement, update (overwrite) and read
+  * Counters support: increment, decrement, update (overwrite) and read (*Done*)
   * ~~Ability for the key generation to be done via a referenced bean that adheres to a SSM-specified interface~~
-  * Runtime memcached node switching. IPs of memcached servers can be modified in the fly without redeploying application
-  * Object can be serialized to json, pluggable json transcoders mechanism configurable per class
-  * Support different memcached clients: [http://code.google.com/p/spymemcached/ spymemcached] and [http://code.google.com/p/xmemcached/ xmemcached]
-  * Integration with Spring 3
-  * Order of missed keys are the same as order of input argument in intercepted method
+  * Runtime memcached node switching. IPs of memcached servers can be modified in the fly without redeploying application (*Done*)
+  * Object can be serialized to json, pluggable json transcoders mechanism configurable per class (*Done*)
+  * Support different memcached clients: [http://code.google.com/p/spymemcached/ spymemcached] and [http://code.google.com/p/xmemcached/ xmemcached] (*Done*)
+  * Integration with Spring 3 (*Done*)
+  * Order of missed keys are the same as order of input argument in intercepted method (*Done*)
   * Extend ReadThroughMultiCache with options to:
     * generate cache key from result, objects from result will be added to cache not by concatenating method arguments but invoking  CacheKeyMethod on each object in result list
     * skip null values in result
