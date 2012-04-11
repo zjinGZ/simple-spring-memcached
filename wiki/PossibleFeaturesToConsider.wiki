@@ -11,7 +11,7 @@
   * "Soft" expirations?
   * blocking cache gets (a la Ehcache Blocking Cache)?
   * JMX Mgmt
-  * Cache Disabling
+  * Cache Disabling --> in *2.0.0*
   * Client pooling
   * Provide a class/bean name to process input params
   * Access to Memcached stats (plus decorations for %ages)
