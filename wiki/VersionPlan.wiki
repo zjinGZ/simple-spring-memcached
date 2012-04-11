@@ -23,8 +23,9 @@
     * add null values to cache under keys that don't occurred in result list (*Done*)
   * Extend UpdateMultiCache with options to:
     * add null values to cache under keys (@ParameterValueKeyProvider + @ReturnValueKeyProvider) \ (@ParameterDataUpdateContent + @ReturnDataUpdateContent) (*Done*)
-  * Cache zones - instead of one global cache many caches using different providers, servers and configuration can be defined
-  * Custom spring namespace (ssm)
+  * Cache zones - instead of one global cache many caches using different providers, servers and configuration can be defined (*Done*)
+  * ~~Custom spring namespace (ssm)~~ (*moved to 2.1.0*) 
+  * Cache Disabling (*Done*)  
   * Deploy artifacts to maven central repository  
 
 ----
