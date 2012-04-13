@@ -1,4 +1,3 @@
-#labels Deprecated
 = Introduction =
 Distributed caching can be a big, hairy, intricate, and complex proposition when using it extensively.
 
