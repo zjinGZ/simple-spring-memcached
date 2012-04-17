@@ -1,4 +1,5 @@
 #summary Draft of the useful information of current version 2.0.0
+#labels Featured
 
 = Introduction =
 Distributed caching can be a big, hairy, intricate, and complex proposition when using it extensively.
