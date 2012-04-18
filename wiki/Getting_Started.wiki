@@ -34,6 +34,21 @@ For [http://code.google.com/p/spymemcached/ spymemcached] add dependency:
 	<version>2.7.3</version>
     </dependency>
 }}}
+Unfortunately spymemcached isn't available in central maven repository, currently it's hosted by:
+{{{
+   <repositories>
+      ........
+     <repository>
+       <id>spy</id>
+       <name>Spy Repository</name>
+       <layout>default</layout>
+       <url>http://files.couchbase.com/maven2/</url>
+       <snapshots>
+         <enabled>false</enabled>
+       </snapshots>
+     </repository>
+   </repositories>
+}}}
 For [http://code.google.com/p/xmemcached/ xmemcached] add dependency:
 {{{
     <dependency>
