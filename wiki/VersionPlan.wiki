@@ -7,7 +7,7 @@
 ----
 = Version 2 =
 
-== 2.0.0 (_In Progress_) ==
+== 2.0.0 (Done) ==
   * Inline parameter annotation, rather than an integer _keyIndex_, to identify the object that will provide the key (*Done*)
   * Cache key can be generated using several input method's parameters (*Done*)
   * Counters support: increment, decrement, update (overwrite) and read (*Done*)
@@ -26,7 +26,7 @@
   * Cache zones - instead of one global cache many caches using different providers, servers and configuration can be defined (*Done*)
   * ~~Custom spring namespace (ssm)~~ (*moved to 2.1.0*) 
   * Cache Disabling (*Done*)  
-  * Deploy artifacts to maven central repository  
+  * Deploy artifacts to maven central repository (*Done*) 
 
 ----
 = Version 1 =
