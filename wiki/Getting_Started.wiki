@@ -68,7 +68,8 @@ Simple-Spring-Memcached also requires an annotation to enable AOP access, which 
 {{{
 <beans xmlns="http://www.springframework.org/schema/beans" 
     xmlns:aop="http://www.springframework.org/schema/aop"
-    xsi:schemaLocation="http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.0.xsd">
+    xsi:schemaLocation="http://www.springframework.org/schema/aop
+              http://www.springframework.org/schema/aop/spring-aop-3.0.xsd">
 
 ...
 
