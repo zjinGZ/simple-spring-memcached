@@ -5,7 +5,13 @@
   * Each version fully unit tested
   * Each version fully integration tested
 ----
+
+
+
 = Version 2 =
+
+2.1.0 (Planning)
+  * Issue 2: Providers in separated modules
 
 == 2.0.0 (Done) ==
   * Inline parameter annotation, rather than an integer _keyIndex_, to identify the object that will provide the key (*Done*)
