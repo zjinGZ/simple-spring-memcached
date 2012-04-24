@@ -25,11 +25,11 @@
   * Support different memcached clients: [http://code.google.com/p/spymemcached/ spymemcached] and [http://code.google.com/p/xmemcached/ xmemcached] (*Done*)
   * Integration with Spring 3 (*Done*)
   * Order of missed keys are the same as order of input arguments in intercepted method (*Done*)
-  * Extend ReadThroughMultiCache with options to:
+  * Extend [https://simple-spring-memcached.googlecode.com/svn/docs/2.0.0/apidocs/com/google/code/ssm/api/ReadThroughMultiCache.html ReadThroughMultiCache] with options to:
     * generate cache key from result, objects from result will be added to cache not by concatenating method arguments but invoking  [https://simple-spring-memcached.googlecode.com/svn/docs/2.0.0/apidocs/com/google/code/ssm/api/CacheKeyMethod.html CacheKeyMethod] on each object in result list (*Done*)
     * skip null values in result (*Done*)
     * add null values to cache under keys that don't occurred in result list (*Done*)
-  * Extend UpdateMultiCache with options to:
+  * Extend [https://simple-spring-memcached.googlecode.com/svn/docs/2.0.0/apidocs/com/google/code/ssm/api/UpdateMultiCache.html UpdateMultiCache] with options to:
     * add null values to cache under keys ([https://simple-spring-memcached.googlecode.com/svn/docs/2.0.0/apidocs/com/google/code/ssm/api/ParameterValueKeyProvider.html @ParameterValueKeyProvider] + [https://simple-spring-memcached.googlecode.com/svn/docs/2.0.0/apidocs/com/google/code/ssm/api/ReturnValueKeyProvider.html @ReturnValueKeyProvider]) \ ([https://simple-spring-memcached.googlecode.com/svn/docs/2.0.0/apidocs/com/google/code/ssm/api/ParameterDataUpdateContent.html @ParameterDataUpdateContent] + [https://simple-spring-memcached.googlecode.com/svn/docs/2.0.0/apidocs/com/google/code/ssm/api/ReturnDataUpdateContent.html @ReturnDataUpdateContent]) (*Done*)
   * Cache zones - instead of one global cache many caches using different providers, servers and configuration can be defined (*Done*)
   * ~~Custom spring namespace (ssm)~~ (*moved to 2.1.0*) 
