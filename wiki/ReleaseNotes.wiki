@@ -12,10 +12,10 @@
   # Cache zones - instead of one global cache many caches using different providers, servers and configuration can be defined.
   # Integration with Spring 3.
   # Order of missed keys are the same as order of input arguments in intercepted method. 
-  # Extend ReadThroughMultiCache with options to:
-    * generate cache key from result, objects from result will be added to cache not by concatenating method arguments but invoking  CacheKeyMethod on each object in result list
+  # Extend [https://simple-spring-memcached.googlecode.com/svn/docs/2.0.0/apidocs/com/google/code/ssm/api/ReadThroughMultiCache.html ReadThroughMultiCache] with options to:
+    * generate cache key from result, objects from result will be added to cache not by concatenating method arguments but invoking  [https://simple-spring-memcached.googlecode.com/svn/docs/2.0.0/apidocs/com/google/code/ssm/api/CacheKeyMethod.html CacheKeyMethod] on each object in result list
     * skip null values in result
     * add null values to cache under keys that don't occurred in result list.
-  # Extend UpdateMultiCache with options to:
-    * add null values to cache under keys (@ParameterValueKeyProvider + @ReturnValueKeyProvider) \ (@ParameterDataUpdateContent + @ReturnDataUpdateContent).
+  # Extend [https://simple-spring-memcached.googlecode.com/svn/docs/2.0.0/apidocs/com/google/code/ssm/api/UpdateMultiCache.html UpdateMultiCache] with options to:
+    * add null values to cache under keys ([https://simple-spring-memcached.googlecode.com/svn/docs/2.0.0/apidocs/com/google/code/ssm/api/ParameterValueKeyProvider.html @ParameterValueKeyProvider] + [https://simple-spring-memcached.googlecode.com/svn/docs/2.0.0/apidocs/com/google/code/ssm/api/ReturnValueKeyProvider.html @ReturnValueKeyProvider]) \ ([https://simple-spring-memcached.googlecode.com/svn/docs/2.0.0/apidocs/com/google/code/ssm/api/ParameterDataUpdateContent.html @ParameterDataUpdateContent] + [https://simple-spring-memcached.googlecode.com/svn/docs/2.0.0/apidocs/com/google/code/ssm/api/ReturnDataUpdateContent.html @ReturnDataUpdateContent]).
   # Cache Disabling.
