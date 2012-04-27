@@ -1,5 +1,6 @@
 #summary Useful information of current SSM version 2.0.0
 #labels Featured
+<wiki:toc max_depth="3" />
 
 = Introduction =
 Distributed caching can be a big, hairy, intricate, and complex proposition when using it extensively.
@@ -26,6 +27,8 @@ In addition to the Simple-Spring-Memcached JAR file, the following libraries mus
 
 Next step is to choose one of the available java memcached clients.
 
+== Spymemcached ==
+
 For [http://code.google.com/p/spymemcached/ spymemcached] add dependency:
 {{{
     <dependency>
@@ -49,6 +52,9 @@ Unfortunately spymemcached isn't available in central maven repository, currentl
      </repository>
    </repositories>
 }}}
+
+== Xmemcached ==
+
 For [http://code.google.com/p/xmemcached/ xmemcached] add dependency:
 {{{
     <dependency>
