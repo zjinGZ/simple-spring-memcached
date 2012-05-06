@@ -74,3 +74,19 @@ By default all objects stored in cache are serialized/deserialized using standar
 Saved object may be serialized to json which make it smaller and human readable. In this case [http://wiki.fasterxml.com/JacksonHome jackson] library is used. To enable json serialization annotate method with [https://simple-spring-memcached.googlecode.com/svn/docs/2.0.0/apidocs/com/google/code/ssm/api/format/UseJson.html @UseJson] and define map of [https://simple-spring-memcached.googlecode.com/svn/docs/2.0.0/apidocs/com/google/code/ssm/transcoders/JsonTranscoder.html JsonTranscoders] in [https://simple-spring-memcached.googlecode.com/svn/docs/2.0.0/apidocs/index.html?com/google/code/ssm/CacheFactory.html CacheFactory], one transcoder for each type.
 
 Keep in mind that all methods that operate on given type of cached data should use the same serialization, otherwise cache may be useless. 
+
+= Snapshot build ==
+
+Current development build of SSM is available in [https://oss.sonatype.org/content/repositories/snapshots/com/google/code/simple-spring-memcached/ Sonatype OSS maven repository].
+{{{
+  <repositories>
+     <repository>
+        <id>oss.snaphost</id>
+        <name>OSS snapshots</name>
+        <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
+        <snapshots>
+           <enabled>true</enabled>
+        </snapshots>
+    </repository>
+ </repositories>
+}}}
