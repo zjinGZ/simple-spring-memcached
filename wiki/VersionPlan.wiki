@@ -7,12 +7,12 @@
 ----
 
 
-
 = Version 2 =
 
 == 2.1.0 (Planning) ==
   * Issue 2: Providers in separated modules
   * Issue 3: Support a Spring 3.1 [http://static.springsource.org/spring/docs/3.1.x/javadoc-api/org/springframework/cache/Cache.html Cache] / [http://static.springsource.org/spring/docs/3.1.x/javadoc-api/org/springframework/cache/CacheManager.html CacheManager] implementation
+  * Custom default transcoder
 
 
 == 2.0.0 (Done) ==
@@ -32,7 +32,7 @@
   * Extend [https://simple-spring-memcached.googlecode.com/svn/docs/2.0.0/apidocs/com/google/code/ssm/api/UpdateMultiCache.html UpdateMultiCache] with options to:
     * add null values to cache under keys ([https://simple-spring-memcached.googlecode.com/svn/docs/2.0.0/apidocs/com/google/code/ssm/api/ParameterValueKeyProvider.html @ParameterValueKeyProvider] + [https://simple-spring-memcached.googlecode.com/svn/docs/2.0.0/apidocs/com/google/code/ssm/api/ReturnValueKeyProvider.html @ReturnValueKeyProvider]) \ ([https://simple-spring-memcached.googlecode.com/svn/docs/2.0.0/apidocs/com/google/code/ssm/api/ParameterDataUpdateContent.html @ParameterDataUpdateContent] + [https://simple-spring-memcached.googlecode.com/svn/docs/2.0.0/apidocs/com/google/code/ssm/api/ReturnDataUpdateContent.html @ReturnDataUpdateContent]) (*Done*)
   * Cache zones - instead of one global cache many caches using different providers, servers and configuration can be defined (*Done*)
-  * ~~Custom spring namespace (ssm)~~ (*moved to 2.1.0*) 
+  * ~~Custom spring namespace (ssm)~~ (*moved to 2.X.0*) 
   * Cache Disabling (*Done*)  
   * Deploy artifacts to maven central repository (*Done*) 
 
