@@ -32,7 +32,7 @@
   * Extend [https://simple-spring-memcached.googlecode.com/svn/docs/2.0.0/apidocs/com/google/code/ssm/api/UpdateMultiCache.html UpdateMultiCache] with options to:
     * add null values to cache under keys ([https://simple-spring-memcached.googlecode.com/svn/docs/2.0.0/apidocs/com/google/code/ssm/api/ParameterValueKeyProvider.html @ParameterValueKeyProvider] + [https://simple-spring-memcached.googlecode.com/svn/docs/2.0.0/apidocs/com/google/code/ssm/api/ReturnValueKeyProvider.html @ReturnValueKeyProvider]) \ ([https://simple-spring-memcached.googlecode.com/svn/docs/2.0.0/apidocs/com/google/code/ssm/api/ParameterDataUpdateContent.html @ParameterDataUpdateContent] + [https://simple-spring-memcached.googlecode.com/svn/docs/2.0.0/apidocs/com/google/code/ssm/api/ReturnDataUpdateContent.html @ReturnDataUpdateContent]) (*Done*)
   * Cache zones - instead of one global cache many caches using different providers, servers and configuration can be defined (*Done*)
-  * ~~Custom spring namespace (ssm)~~ (*moved to 2.X.0*) 
+  * ~~Custom spring namespace (ssm)~~ (*moved to 2.?.0*) 
   * Cache Disabling (*Done*)  
   * Deploy artifacts to maven central repository (*Done*) 
 
