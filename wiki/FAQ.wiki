@@ -6,11 +6,11 @@ If you need to store an individual object (`User`) by several different keys (`p
 This projects' recommended pattern is to decide on one key to be the default key for the 'canonical' reference, and then the 'secondary' keys can be mapped to the default key.
 Here's an example:
 {{{
-    @ReadThroughSingleCache(namespace = "ComplexObject", keyIndex = 1, expiration = 300)
-    public ComplexObject getObjectByPrimaryKey(Long primaryKey) {...}
+    @ReadThroughSingleCache(namespace = "ComplexObject", expiration = 300)
+    public ComplexObject getObjectByPrimaryKey(@ParameterValueKeyProvider Long primaryKey) {...}
     
-    @ReadThroughSingleCache(namespace = "ComplexObjectByEmail", keyIndex = 1, expiration = 300)
-    public Long getPrimaryKeyByEmail(String email) {...}
+    @ReadThroughSingleCache(namespace = "ComplexObjectByEmail", expiration = 300)
+    public Long getPrimaryKeyByEmail(@ParameterValueKeyProvider String email) {...}
 }}}
 A feature request has been added to consider providing multi-key or primary-and-secondary support natively, but for the time being, this pattern can effectively get you to where you need.
 (Thanks to Ben Manes, of the [http://code.google.com/p/concurrentlinkedhashmap/ concurrentlinkedhashmap] project for challenging me with this question.)
