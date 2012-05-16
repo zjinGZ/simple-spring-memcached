@@ -7,9 +7,9 @@
   # Counters support: increment, decrement, update (overwrite) and read.
   # Inline parameter annotation, rather than an integer _keyIndex_, to identify the object that will provide the key.
   # Support different memcached clients: [http://code.google.com/p/spymemcached/ spymemcached] and [http://code.google.com/p/xmemcached/ xmemcached].
-  # Runtime memcached node switching. IPs of memcached servers can be modified in the fly without redeploying application.
-  # Object can be serialized to json, pluggable json transcoders mechanism configurable per class.
-  # Cache zones - instead of one global cache many caches using different providers, servers and configuration can be defined.
+  # [http://code.google.com/p/simple-spring-memcached/wiki/UserGuide#Runtime_node_switching Runtime memcached node switching]. IPs of memcached servers can be modified in the fly without redeploying application.
+  # [http://code.google.com/p/simple-spring-memcached/wiki/UserGuide#Serialization Object can be serialized to json], pluggable json transcoders mechanism configurable per class.
+  # [http://code.google.com/p/simple-spring-memcached/wiki/UserGuide#Cache_zone Cache zones] - instead of one global cache many caches using different providers, servers and configuration can be defined.
   # Integration with Spring 3.
   # Order of missed keys are the same as order of input arguments in intercepted method. 
   # Extend [https://simple-spring-memcached.googlecode.com/svn/docs/2.0.0/apidocs/com/google/code/ssm/api/ReadThroughMultiCache.html ReadThroughMultiCache] with options to:
@@ -18,4 +18,4 @@
     * add null values to cache under keys that don't occurred in result list.
   # Extend [https://simple-spring-memcached.googlecode.com/svn/docs/2.0.0/apidocs/com/google/code/ssm/api/UpdateMultiCache.html UpdateMultiCache] with options to:
     * add null values to cache under keys ([https://simple-spring-memcached.googlecode.com/svn/docs/2.0.0/apidocs/com/google/code/ssm/api/ParameterValueKeyProvider.html @ParameterValueKeyProvider] + [https://simple-spring-memcached.googlecode.com/svn/docs/2.0.0/apidocs/com/google/code/ssm/api/ReturnValueKeyProvider.html @ReturnValueKeyProvider]) \ ([https://simple-spring-memcached.googlecode.com/svn/docs/2.0.0/apidocs/com/google/code/ssm/api/ParameterDataUpdateContent.html @ParameterDataUpdateContent] + [https://simple-spring-memcached.googlecode.com/svn/docs/2.0.0/apidocs/com/google/code/ssm/api/ReturnDataUpdateContent.html @ReturnDataUpdateContent]).
-  # Cache Disabling.
+  # [http://code.google.com/p/simple-spring-memcached/wiki/UserGuide#Disabling_cache Cache Disabling].
