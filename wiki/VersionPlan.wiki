@@ -11,7 +11,8 @@
 
 == 3.0.0 (In Progress) ==
   * Issue 2: Providers (spymemcached and xmemcached) in separated modules (*Done*)
-  * Issue 3: Support a Spring 3.1 [http://static.springsource.org/spring/docs/3.1.x/javadoc-api/org/springframework/cache/Cache.html Cache] / [http://static.springsource.org/spring/docs/3.1.x/javadoc-api/org/springframework/cache/CacheManager.html CacheManager] implementation (*In Progress*)
+  * Issue 3: Support a Spring 3.1 [http://static.springsource.org/spring/docs/3.1.x/javadoc-api/org/springframework/cache/Cache.html Cache] / [http://static.springsource.org/spring/docs/3.1.x/javadoc-api/org/springframework/cache/CacheManager.html CacheManager] implementation (*Done*)
+  * Per method expiration time while using SSM as a backend for Spring 3.1 Cache (*Done*)
   * Custom default transcoder (*Done*)
   * Rewrite serialization logic, for each type: java, json or custom serialization can be used (*In Progress*)
   * In case of json serialization store information about serialized type (*Done*)
