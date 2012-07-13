@@ -17,7 +17,7 @@
   * Custom default transcoder (*Done*)
   * Rewrite serialization logic, for each type: java, json or custom serialization can be used (*In Progress*)
   * In case of json serialization store information about serialized type (*Done*)
-  * Remove dependency to external maven repositories, deploy spymemcached to central maven repo
+  * Remove dependency to external maven repositories, deploy spymemcached to central maven repo (*Done*)
 
 = Version 2 =
 
