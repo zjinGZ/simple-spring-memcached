@@ -147,6 +147,23 @@ Whereas the `ReadThrough*Cache` annotations are involved with populating the cac
 === `@UpdateSingleCache`, `@UpdateMultiCache`, `@UpdateAssignCache` ===
 The `Update*Cache` annotations can serve as a bit of performance improvement. Unlike the `Invalidate*Cache` annotations which remove a value from the cache to be looked up again in the future, the `Update*Cache` annotations force an update to the value in the cache which obviates the need to check the underlying method in a `ReadThrough*Cache` method.
 
+== Counter Annotations ==
+Counters can be use to count methods invocation or user's actions. Memcached store counters as 64-bit no-negative integers.
+
+=== `@ReadCounterFromCache` ===
+Reads counter's value from cache. This annotation follows the standard caching flow as follows:
+  # Check if value exists in the cache and can be cast to number. If it does, return it and exit cleanly.
+  # If not found in the cache, then ask the underlying method for the data.
+  # Before returning the data, write it out to the cache (using `incr` command) for future access.
+  # Return the value (counter).
+Annotated method must return one of int, Integer, long or Long.
+
+=== `@IncrementCounterInCache`, `@DecrementCounterInCache` ===
+Those annotations increment or decrement by 1 counter in cache. In case of incrementing if counter doesn't exist in cache it is initialized with 1. Counter value is always no negative number and can't be decrementing below 0.
+
+=== `@UpdateCounterInCache` ===
+Similar to `@UpdateSingleCache` but sets new counter's value in cache. The value used to update counter should be of type int, Integer, long or Long.
+
 = Examples =
 
 === `@ReadThroughSingleCache` ===
