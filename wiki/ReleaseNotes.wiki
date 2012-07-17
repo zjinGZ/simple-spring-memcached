@@ -4,7 +4,7 @@
 ----
 == Version 2.0.0 (16-04-2012) ==
   # Cache key can be generated using several input method's parameters.
-  # Counters support: increment, decrement, update (overwrite) and read.
+  # [http://code.google.com/p/simple-spring-memcached/wiki/Getting_Started#Counter_Annotations Counters support]: increment, decrement, update (overwrite) and read.
   # Inline parameter annotation, rather than an integer _keyIndex_, to identify the object that will provide the key.
   # Support different memcached clients: [http://code.google.com/p/spymemcached/ spymemcached] and [http://code.google.com/p/xmemcached/ xmemcached].
   # [http://code.google.com/p/simple-spring-memcached/wiki/UserGuide#Runtime_node_switching Runtime memcached node switching]. IPs of memcached servers can be modified in the fly without redeploying application.
