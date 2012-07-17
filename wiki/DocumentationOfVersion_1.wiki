@@ -1,4 +1,4 @@
-#summary The useful information of previous version 1.0.0
+#summary The useful information about version 1.0.0
 
 = Introduction =
 Distributed caching can be a big, hairy, intricate, and complex proposition when using it extensively.
