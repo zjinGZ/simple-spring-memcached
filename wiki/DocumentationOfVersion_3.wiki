@@ -1,5 +1,7 @@
 #summary Useful information about upcoming version 3.0.0
 *UNDER CONSTRUCTION*
+
+*VERSION 3.0.0 IS STILL IN DEVELOPMENT*
 <wiki:toc max_depth="3" />
 
 = Introduction =
@@ -23,11 +25,11 @@ Next step is to choose one of the available java memcached providers. Using Simp
 
 For [http://code.google.com/p/spymemcached/ spymemcached] add dependency:
 {{{
-    <dependency>
-	<groupId>com.google.code.simple-spring-memcached</groupId>
-	<artifactId>spymemcached-provider</artifactId>
-	<version>3.0.0</version>
-    </dependency>
+<dependency>
+  <groupId>com.google.code.simple-spring-memcached</groupId>
+  <artifactId>spymemcached-provider</artifactId>
+  <version>3.0.0</version>
+</dependency>
 }}}
 It uses _spymemcached 3.8.1_. It was unavailable in central maven repository so I've deployed it under changed groupId.
 
@@ -35,18 +37,18 @@ It uses _spymemcached 3.8.1_. It was unavailable in central maven repository so 
 
 For [http://code.google.com/p/xmemcached/ xmemcached] add dependency:
 {{{
-    <dependency>
-	<groupId>com.google.code.simple-spring-memcached</groupId>
-	<artifactId>xmemcached-provider</artifactId>
-        <version>3.0.0</version>
-    </dependency>	
+<dependency>
+  <groupId>com.google.code.simple-spring-memcached</groupId>
+  <artifactId>xmemcached-provider</artifactId>
+  <version>3.0.0</version>
+</dependency>	
 }}}
 It uses _xmemcached 1.3.8_.
 
 = Configuration =
 You will need to inform your `ApplicationContext` of Simple-Spring-Memcached's configuration. This is done with an `import` configuration directive:
 {{{
-	<import resource="simplesm-context.xml" />
+<import resource="simplesm-context.xml" />
 }}}
 
 Simple-Spring-Memcached also requires an annotation to enable AOP access, which in turn requires the AOP namespace being defined:
@@ -56,52 +58,82 @@ Simple-Spring-Memcached also requires an annotation to enable AOP access, which 
     xsi:schemaLocation="http://www.springframework.org/schema/aop
               http://www.springframework.org/schema/aop/spring-aop-3.0.xsd">
 
-...
-
-	<aop:aspectj-autoproxy />
+  <aop:aspectj-autoproxy />
+       
+</beans>
 }}}
 
 
 In order to tell Simple-Spring-Memcached about the specifics of *your* environment, you need to configure default client:
  * spymemcached:
 {{{
-     <bean name="defaultMemcachedClient" class="com.google.code.ssm.CacheFactory">
-		<property name="cacheClientFactory">
-			<bean class="com.google.code.ssm.providers.spymemcached.MemcacheClientFactoryImpl" />
-		</property>
-		<property name="addressProvider">
-			<bean class="com.google.code.ssm.config.DefaultAddressProvider">
-				<property name="address" value="127.0.0.1:11211 127.0.0.1:11311" />
-			</bean>
-		</property>
-		<property name="configuration">
-			<bean class="com.google.code.ssm.providers.CacheConfiguration">
-				<property name="consistentHashing" value="true" />
-			</bean>
-		</property>
-	</bean>
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="
+	   http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+	   http://www.springframework.org/schema/aop 
+           http://www.springframework.org/schema/aop/spring-aop-3.0.xsd">
+
+  <import resource="simplesm-context.xml" />
+
+  <aop:aspectj-autoproxy /> 
+
+  <bean name="defaultMemcachedClient" class="com.google.code.ssm.CacheFactory">
+    <property name="cacheName" value="defaultCache" />
+    <property name="cacheClientFactory">
+      <bean name="cacheClientFactory" class="com.google.code.ssm.providers.spymemcached.MemcacheClientFactoryImpl" />
+    </property>
+    <property name="addressProvider">
+      <bean class="com.google.code.ssm.config.DefaultAddressProvider">
+        <property name="address" value="127.0.0.1:11211" />
+      </bean>
+    </property>
+    <property name="configuration">
+      <bean class="com.google.code.ssm.providers.CacheConfiguration">
+        <property name="consistentHashing" value="true" />
+      </bean>
+    </property>
+  </bean>
+</beans>
 }}}
  * xmemcached:
 {{{
-     <bean name="defaultMemcachedClient" class="com.google.code.ssm.CacheFactory">
-		<property name="cacheClientFactory">
-			<bean class="com.google.code.ssm.providers.xmemcached.MemcacheClientFactoryImpl" />
-		</property>
-		<property name="addressProvider">
-			<bean class="com.google.code.ssm.config.DefaultAddressProvider">
-				<property name="address" value="127.0.0.1:11211 127.0.0.1:11311" />
-			</bean>
-		</property>
-		<property name="configuration">
-			<bean class="com.google.code.ssm.providers.CacheConfiguration">
-				<property name="consistentHashing" value="true" />
-			</bean>
-		</property>
-	</bean>
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="
+	   http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+	   http://www.springframework.org/schema/aop 
+           http://www.springframework.org/schema/aop/spring-aop-3.0.xsd">
+
+  <import resource="simplesm-context.xml" />
+
+  <aop:aspectj-autoproxy />  
+
+  <bean name="defaultMemcachedClient" class="com.google.code.ssm.CacheFactory">
+    <property name="cacheName" value="defaultCache" />
+    <property name="cacheClientFactory">
+      <bean name="cacheClientFactory" class="com.google.code.ssm.providers.xmemcached.MemcacheClientFactoryImpl" />
+    </property>
+    <property name="addressProvider">
+      <bean class="com.google.code.ssm.config.DefaultAddressProvider">
+        <property name="address" value="127.0.0.1:11211" />
+      </bean>
+    </property>
+    <property name="configuration">
+      <bean class="com.google.code.ssm.providers.CacheConfiguration">
+        <property name="consistentHashing" value="true" />
+      </bean>
+    </property>
+  </bean>
+</beans>
 }}}
 
 The `consistentHashing` parameter refers to a [http://code.google.com/p/memcached/wiki/FAQ#What_is_a_%22consistent_hashing%22_client? method of choosing to which node a value is written], as implemented in the [http://code.google.com/p/spymemcached/ spymemcached ] or [http://code.google.com/p/xmemcached/ xmemcached] client.
-The `address` parameter in addressProvider bean is how you tell the Simple-Spring-Memcached library upon which IPs and ports your Memcached server(s) are listening.
+The `address` parameter in addressProvider bean is how you tell the Simple-Spring-Memcached library upon which IPs and ports your Memcached server(s) are listening. 
 
 = Usage =
 
@@ -149,21 +181,21 @@ Similar to `@UpdateSingleCache` but sets new counter's value in cache. The value
 === `@ReadThroughSingleCache` ===
 In this example, we are working with a fairly standard DAO-like pattern:
 {{{
-    @ReadThroughSingleCache(namespace = "CplxObj", expiration = 3600)
-    public ComplexObject getComplexObjectFromDB(@ParameterValueKeyProvider Long complexObjectPk) {
-        ...
-        return result;
-    }
+@ReadThroughSingleCache(namespace = "CplxObj", expiration = 3600)
+public ComplexObject getComplexObjectFromDB(@ParameterValueKeyProvider Long complexObjectPk) {
+  // ...
+  return result;
+}
 }}}
 The basic usage is that you've got a primary key (`complexObjectPk`) and you want to get the corresponding `ComplexObject` from the DB. This is kind of an expensive operation, and you'd like to do it less frequently because the data rarely changes. So, you slap on the Simple-Spring-Memcached annotation. You assign a (fairly arbitrary) namespace of "CplxObj". (Namespacing this way helps ensure that you don't have cache collisions with another type of object that may have the same primary key.) You tell Simple-Spring-Memcached that they key object (`@ParameterValueKeyProvider`) is `complexObjectPk` parameter. And lastly, you tell Simple-Spring-Memcached that you'd like for the value to stick around in the cache for at most 1 hour (3600 seconds).
 
 === `@InvalidateMultiCache` ===
 Here, we deal with another fairly common DAO-like pattern:
 {{{
-    @InvalidateMultiCache(namespace = "CplxObj")
-    public String saveModifiedComplexObjectsToDB(Credentials principal, @ParameterValueKeyProvider List<ComplexObject> complexObjects) {
-       ...
-    }
+@InvalidateMultiCache(namespace = "CplxObj")
+public String saveModifiedComplexObjectsToDB(Credentials principal, @ParameterValueKeyProvider List<ComplexObject> complexObjects) {
+  // ...
+}
 }}}
 This example show off the multiplexing capabilities of SSM. Let's say you made a common change to several of the `ComplexObject`s, and you want to write them out to the database. This means any previously cache-stored versions of these `ComplexObject`s will be stale (out-of-date). We use this `@InvalidateMultiCache` annotation to remove cache copies of that data, which will hopefully require future calls to an `@ReadThrough*Cache` method to hit the underlying method for a fresh copy of the data.
 You'll notice that the complexObjects is annotated with `@ParameterValueKeyProvider`. This is because (in this made-up example) the `ComplexObject`s either have a method with an `@CacheKeyMethod` annotation that outputs the primary key, or an implementation of `toString()` that returns the primary key.
@@ -171,12 +203,12 @@ You'll notice that the complexObjects is annotated with `@ParameterValueKeyProvi
 === `@UpdateAssignCache` ===
 This use-case is a bit more contrived than the above DAO-ish examples, but it gets the point across:
 {{{
-    @ReturnDataUpdateContent
-    @UpdateAssignCache(namespace = "CplxObj", assignedKey = "MyFav", expiration = 7200)
-    public List<Long> resetMyFavoriteComplexObjectPksFromDB() {
-        ...
-        return results;
-    }
+@ReturnDataUpdateContent
+@UpdateAssignCache(namespace = "CplxObj", assignedKey = "MyFav", expiration = 7200)
+public List<Long> resetMyFavoriteComplexObjectPksFromDB() {
+  //...
+  return results;
+}
 }}}
 This `@Update*Cache` annotations are designed to force an update to the cache. This may be preferable in many cases rather than the invalidate-readthrough pattern, which ends up requiring a later trip back to the underlying method/db.
 This example also shows how the `@*AssignCache` annotations work. Instead of relying on input/output values for the key, use an annotation-declared key.
@@ -184,6 +216,137 @@ The data that gets cached in this scenario is the output data (`@ReturnDataUpdat
 
 === Looking for more examples? ===
 More examples are in [http://code.google.com/p/simple-spring-memcached/source/browse/#svn%2Ftags%2Fsimple-spring-memcached-parent-2.0.0%2Fintegration-test%2Fsrc integration-test] project.
+
+= Spring 3.1 Cache Integration =
+Spring 3.1 introduced new [http://static.springsource.org/spring/docs/3.1.2.RELEASE/spring-framework-reference/html/cache.html cache abstraction]. Out of the box spring provides integration with two storages ConcurrentMap and [http://ehcache.org/ ehcache]. Simple Spring Memcached can be used as another storage. Using SSM users of Spring 3.1 Cache can store data in memcached.
+
+== Dependency ==
+Similar to standard usage of SSM you need to choose one of available java memcached providers. 
+
+=== Spymemcached ===
+{{{
+<dependency>
+  <groupId>com.google.code.simple-spring-memcached</groupId>
+  <artifactId>spring-cache</artifactId>
+  <version>3.0.0</version>
+</dependency>
+<dependency>
+  <groupId>com.google.code.simple-spring-memcached</groupId>
+  <artifactId>spymemcached-provider</artifactId>
+  <version>3.0.0</version>
+</dependency>
+}}}
+
+=== Xmemcached ===
+{{{
+<dependency>
+  <groupId>com.google.code.simple-spring-memcached</groupId>
+  <artifactId>spring-cache</artifactId>
+  <version>3.0.0</version>
+</dependency>
+<dependency>
+  <groupId>com.google.code.simple-spring-memcached</groupId>
+  <artifactId>xmemcached-provider</artifactId>
+  <version>3.0.0</version>
+</dependency>	
+}}}
+
+== Configuration ==
+If SSM is used only through Spring cache abstraction importing `simplesm-context.xml` is not required.
+
+  * spymemcached:
+{{{
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context" xmlns:cache="http://www.springframework.org/schema/cache"
+	xsi:schemaLocation="
+  	   http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+           http://www.springframework.org/schema/context
+           http://www.springframework.org/schema/context/spring-context-3.1.xsd
+           http://www.springframework.org/schema/cache 
+           http://www.springframework.org/schema/cache/spring-cache-3.1.xsd">
+
+  <cache:annotation-driven />
+  
+  <bean name="cacheManager" class="com.google.code.ssm.spring.SSMCacheManager">
+    <property name="caches">
+      <set>
+        <bean class="com.google.code.ssm.spring.SSMCache">
+	  <constructor-arg index="0" ref="defaultCache" />
+	  <constructor-arg index="1" value="300" />
+	  <constructor-arg index="2" value="false" />
+	</bean>
+      </set>
+    </property>
+  </bean>
+
+  <bean name="defaultCache" class="com.google.code.ssm.CacheFactory">
+    <property name="cacheName" value="defaultCache" />
+    <property name="cacheClientFactory">
+      <bean name="cacheClientFactory" class="com.google.code.ssm.providers.spymemcached.MemcacheClientFactoryImpl" />
+    </property>
+    <property name="addressProvider">
+      <bean class="com.google.code.ssm.config.DefaultAddressProvider">
+        <property name="address" value="127.0.0.1:11211" />
+      </bean>
+    </property>
+    <property name="configuration">
+      <bean class="com.google.code.ssm.providers.CacheConfiguration">
+        <property name="consistentHashing" value="true" />
+      </bean>
+    </property>
+  </bean>
+</beans>
+}}}
+
+  * xmemcached:
+{{{
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context" xmlns:cache="http://www.springframework.org/schema/cache"
+	xsi:schemaLocation="
+  	   http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+           http://www.springframework.org/schema/context
+           http://www.springframework.org/schema/context/spring-context-3.1.xsd
+           http://www.springframework.org/schema/cache 
+           http://www.springframework.org/schema/cache/spring-cache-3.1.xsd">
+
+  <cache:annotation-driven />
+  
+  <bean name="cacheManager" class="com.google.code.ssm.spring.SSMCacheManager">
+    <property name="caches">
+      <set>
+        <bean class="com.google.code.ssm.spring.SSMCache">
+	  <constructor-arg index="0" ref="defaultCache" />
+	  <constructor-arg index="1" value="300" />
+	  <constructor-arg index="2" value="false" />
+	</bean>
+      </set>
+    </property>
+  </bean>
+
+  <bean name="defaultCache" class="com.google.code.ssm.CacheFactory">
+    <property name="cacheName" value="defaultCache" />
+    <property name="cacheClientFactory">
+      <bean name="cacheClientFactory" class="com.google.code.ssm.providers.xmemcached.MemcacheClientFactoryImpl" />
+    </property>
+    <property name="addressProvider">
+      <bean class="com.google.code.ssm.config.DefaultAddressProvider">
+        <property name="address" value="127.0.0.1:11211" />
+      </bean>
+    </property>
+    <property name="configuration">
+      <bean class="com.google.code.ssm.providers.CacheConfiguration">
+        <property name="consistentHashing" value="true" />
+      </bean>
+    </property>
+  </bean>
+</beans>
+}}}
+
+
 
 = Additional Information =
 
