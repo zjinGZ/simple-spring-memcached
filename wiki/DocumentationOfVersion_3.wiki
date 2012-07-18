@@ -21,7 +21,7 @@ In addition to the Simple-Spring-Memcached JAR files, the following libraries mu
 
 Next step is to choose one of the available java memcached providers. Using Simple Spring Memcached requires adding only one extra dependency to your project's pom (one of the below providers).
 
-== Spymemcached ==
+  * spymemcached
 
 For [http://code.google.com/p/spymemcached/ spymemcached] add dependency:
 {{{
@@ -33,7 +33,7 @@ For [http://code.google.com/p/spymemcached/ spymemcached] add dependency:
 }}}
 It uses _spymemcached 3.8.1_. It was unavailable in central maven repository so I've deployed it under changed groupId.
 
-== Xmemcached ==
+  * xmemcached:
 
 For [http://code.google.com/p/xmemcached/ xmemcached] add dependency:
 {{{
@@ -223,7 +223,7 @@ Spring 3.1 introduced new [http://static.springsource.org/spring/docs/3.1.2.RELE
 == Dependency ==
 Similar to standard usage of SSM you need to choose one of available java memcached providers. 
 
-=== Spymemcached ===
+  * spymemcached:
 {{{
 <dependency>
   <groupId>com.google.code.simple-spring-memcached</groupId>
@@ -237,7 +237,7 @@ Similar to standard usage of SSM you need to choose one of available java memcac
 </dependency>
 }}}
 
-=== Xmemcached ===
+  * xmemcached:
 {{{
 <dependency>
   <groupId>com.google.code.simple-spring-memcached</groupId>
