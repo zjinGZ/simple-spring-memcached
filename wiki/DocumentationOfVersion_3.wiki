@@ -215,12 +215,12 @@ This example also shows how the `@*AssignCache` annotations work. Instead of rel
 The data that gets cached in this scenario is the output data (`@ReturnDataUpdateContent`). The list of primary keys is stored as a single value under the id "MyFav" within the namespace of "CplxObj".
 
 === Looking for more examples? ===
-More examples are in [http://code.google.com/p/simple-spring-memcached/source/browse/#svn%2Ftags%2Fsimple-spring-memcached-parent-2.0.0%2Fintegration-test%2Fsrc integration-test] project.
+More examples are in [http://code.google.com/p/simple-spring-memcached/source/browse/#svn%2Ftags%2Fsimple-spring-memcached-parent-3.0.0%2Fintegration-test%2Fsrc integration-test] project.
 
 = Spring 3.1 Cache Integration =
 Spring 3.1 introduced new [http://static.springsource.org/spring/docs/3.1.2.RELEASE/spring-framework-reference/html/cache.html cache abstraction]. Out of the box spring provides integration with two storages ConcurrentMap and [http://ehcache.org/ ehcache]. Simple Spring Memcached can be used as another storage. Using SSM users of Spring 3.1 Cache can store data in memcached.
 
-== Dependency ==
+== Dependencies ==
 Similar to standard usage of SSM you need to choose one of available java memcached providers. 
 
   * spymemcached:
@@ -252,7 +252,13 @@ Similar to standard usage of SSM you need to choose one of available java memcac
 }}}
 
 == Configuration ==
-If SSM is used only through Spring cache abstraction importing `simplesm-context.xml` is not required.
+If SSM is used only through Spring 3.1 Cache abstraction importing `simplesm-context.xml` is not required. 
+
+Annotations provided by Spring 3.1 Cache abstraction ([http://static.springsource.org/spring/docs/3.1.x/javadoc-api/index.html?org/springframework/cache/annotation/Cacheable.html @Cacheable] and [http://static.springsource.org/spring/docs/3.1.x/javadoc-api/index.html?org/springframework/cache/annotation/CachePut.html @CachePut]) don't allow to pass expiration time. SSM and memcached required expiration time in some operations so it has to be set somehow. The simplest way is to set default expiration time on cache while creating `SSMCache` object. This expiration will be used in all operations on the cache. 
+
+
+Memcached doesn't support cache zones or cache namespaces, so there's no such operation like clearing only some part of data stored in zone/namespace, only all data stored by memcached instance can be removed. SSM provides concept of [http://code.google.com/p/simple-spring-memcached/wiki/UserGuide#Cache_zone cache zone]. The name of the cache zone is mapped to the value parameter in Spring Cache annotations. Different cache zones may use common memcached servers. Such overlapping should be avoided because flushing all data from one cache zone removes also some (or all) data from another cache zone that use the same memcached instances. To protect from such case by default `@CacheEvict(..., "allEntries" = true)` doesn't work. To enable it set `allowClear=true` on `SSMCache`.
+
 
   * spymemcached:
 {{{
@@ -273,9 +279,11 @@ If SSM is used only through Spring cache abstraction importing `simplesm-context
     <property name="caches">
       <set>
         <bean class="com.google.code.ssm.spring.SSMCache">
-	  <constructor-arg index="0" ref="defaultCache" />
-	  <constructor-arg index="1" value="300" />
-	  <constructor-arg index="2" value="false" />
+	  <constructor-arg name="cache" index="0" ref="defaultCache" />
+          <!-- 5 minutes -->
+	  <constructor-arg name="expiration" index="1" value="300" />
+          <!-- @CacheEvict(..., "allEntries" = true) doesn't work -->
+	  <constructor-arg name="allowClear" index="2" value="false" />
 	</bean>
       </set>
     </property>
@@ -319,9 +327,11 @@ If SSM is used only through Spring cache abstraction importing `simplesm-context
     <property name="caches">
       <set>
         <bean class="com.google.code.ssm.spring.SSMCache">
-	  <constructor-arg index="0" ref="defaultCache" />
-	  <constructor-arg index="1" value="300" />
-	  <constructor-arg index="2" value="false" />
+	  <constructor-arg name="cache" index="0" ref="defaultCache" />
+          <!-- 5 minutes -->
+	  <constructor-arg name="expiration" index="1" value="300" />
+          <!-- @CacheEvict(..., "allEntries" = true) doesn't work -->
+	  <constructor-arg name="allowClear" index="2" value="false" />
 	</bean>
       </set>
     </property>
