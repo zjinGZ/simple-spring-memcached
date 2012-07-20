@@ -424,8 +424,18 @@ public User getByPk(String name) {
 Great care was taken while writing SSM to preserve the functionality of any surrounding code. If an exception is thrown anywhere in the SSM code, we've gone to great lengths to catch and log (slf4j) as much information as possible from the exception, but we refrain from passing that exception up to the end user.
 
 === Serialization ===
-Any of the objects being saved to the cache *should* implement `java.io.Serializable` in the very least, but it is [http://www.onjava.com/pub/a/onjava/excerpt/JavaRMI_10/index.html?page=5 highly recommended] that you implement `java.io.Externalizable` in as many classes of the cache data as is possible. Java serialization is a default mechanism. <br/>
-Instead of java serialization saved object may be serialized using custom serialization mechanism. You may use json serializer which usual make saved object smaller and human readable, by default amazing [http://wiki.fasterxml.com/JacksonHome jackson] library is used. To use json serialization for given class `JsonTranscoder` has to be registered.
+Any of the objects being saved to the cache *should* implement `java.io.Serializable` in the very least, but it is [http://www.onjava.com/pub/a/onjava/excerpt/JavaRMI_10/index.html?page=5 highly recommended] that you implement `java.io.Externalizable` in as many classes of the cache data as is possible. Java serialization used by providers (spymemcached or xmemcached) is a default mechanism. <br/> There are four available serialization types (`com.google.code.ssm.api.format.SerializationType`):
+  * PROVIDER: the default one, delegate serialization of cached object to memcached client (spymemcached or xmemcached)
+  * JSON: through amazing [http://wiki.fasterxml.com/JacksonHome jackson] library, as a part of serialized string object type is stored
+  * JAVA: simple java serialization
+  * CUSTOM: uses custom `com.google.code.ssm.providers.CacheTranscoder`
+
+==== Default serialization type ====
+Default seriaization type for each cache is set by `com.google.code.ssm.CacheFactory#setDefaultSerializationType`. Using `SerializationType.CUSTOM` as default serialization requires also 
+setting custom transcoder by `com.google.code.ssm.CacheFactory#setCustomTranscoder`.
+
+==== Different serialization type per method ====
+Serialization type can be also specified per cached method using `@com.google.code.ssm.api.format.Serialization` annotation. This annotation overwrite default serialization type set in `CacheFactory`.
 
 = Contact Us =
 If you have any questions, feel free to ask them on the [http://groups.google.com/group/simple-spring-memecached Google Group]. (*UPDATE*: Sorry, this link was bad up until 02 Aug '09, because I fat-fingered when creating the Google Group. I incorrectly misspelled it as 'simple-spring-memEcached'. So sorry about that!)
