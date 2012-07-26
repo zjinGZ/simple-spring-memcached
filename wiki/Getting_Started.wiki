@@ -409,7 +409,7 @@ One expiration time for all elements in cache may be insufficient when one cache
 {{{
 // cache name: defaultCache, expiration: 600s instead of default 300s
 @Cacheable(value = "defaultCache#600", key = "#id")
-public User getByPk(String name) {
+public User getByPk(int id) {
   // ...
   return result;
 }
