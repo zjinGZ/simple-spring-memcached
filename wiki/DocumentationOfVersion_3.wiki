@@ -1,7 +1,5 @@
-#summary Useful information about upcoming version 3.0.0
-*UNDER CONSTRUCTION*
+#summary Useful information about current version 3.0.0
 
-*VERSION 3.0.0 IS STILL IN DEVELOPMENT*
 <wiki:toc max_depth="3" />
 
 = Introduction =
