@@ -2,6 +2,11 @@
 =Release Notes=
 
 ----
+== Version 3.0.1 (31-07-2012) ==
+  # Remove log4j.property from simple-spring-memcached modue.
+
+<br/>
+
 == Version 3.0.0 (25-07-2012) ==
   # Support a Spring 3.1 [http://static.springsource.org/spring/docs/3.1.x/javadoc-api/org/springframework/cache/Cache.html Cache] / [http://static.springsource.org/spring/docs/3.1.x/javadoc-api/org/springframework/cache/CacheManager.html CacheManager] implementation.
   # Providers (spymemcached and xmemcached) in separated modules.
