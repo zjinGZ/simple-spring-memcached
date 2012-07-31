@@ -9,9 +9,9 @@
 
 = Version 3 =
 
-== 3.0.1 (In Progress) ==
+== 3.0.1 (Done) ==
 
-  * Issue 5: Default log4j.properties in deployed maven artifact (*In Progress*)
+  * Issue 5: Default log4j.properties in deployed maven artifact (*Done*)
 
 == 3.0.0 (Done) ==
   * Issue 2: Providers (spymemcached and xmemcached) in separated modules (*Done*)
