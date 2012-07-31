@@ -9,6 +9,10 @@
 
 = Version 3 =
 
+== 3.0.1 (In Progress) ==
+
+  * Issue 5: Default log4j.properties in deployed maven artifact (*In Progress*)
+
 == 3.0.0 (Done) ==
   * Issue 2: Providers (spymemcached and xmemcached) in separated modules (*Done*)
   * Issue 3: Support a Spring 3.1 [http://static.springsource.org/spring/docs/3.1.x/javadoc-api/org/springframework/cache/Cache.html Cache] / [http://static.springsource.org/spring/docs/3.1.x/javadoc-api/org/springframework/cache/CacheManager.html CacheManager] implementation (*Done*)
