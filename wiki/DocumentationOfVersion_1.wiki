@@ -1,4 +1,5 @@
 #summary Useful information about version 1.0.0
+#labels Deprecated
 
 = Introduction =
 Distributed caching can be a big, hairy, intricate, and complex proposition when using it extensively.
