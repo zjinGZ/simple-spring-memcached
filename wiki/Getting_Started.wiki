@@ -416,6 +416,14 @@ public User getByPk(int id) {
 }}}
 
 
+= Alternative cache storage =
+Simple Spring Memcached despite its name can store cached data not only in memcached. Data may be stored in all cache providers that support memcached protocol (the [https://github.com/memcached/memcached/blob/master/doc/protocol.txt textual] or [https://github.com/memcached/memcached/blob/master/doc/protocol-binary.xml binary]). All those caches can be used also with Spring Cache (through SSM).
+
+== Infinispan ==
+Infinispan supports memcached text protocol, so it can be used with SSM instead of (or together with) memcached server. [https://docs.jboss.org/author/display/ISPN/Using+Infinispan+Memcached+Server Here] you can find more information.
+
+== Couchbase ==
+According to [http://www.couchbase.com/docs/couchbase-manual-1.8/couchbase-architecture-apis-memcached-protocol.html documentation] Couchbase supports the textual memcached protocol.
 
 = Additional Information =
 
