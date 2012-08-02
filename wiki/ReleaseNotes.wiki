@@ -11,7 +11,7 @@
   # Support a Spring 3.1 [http://static.springsource.org/spring/docs/3.1.x/javadoc-api/org/springframework/cache/Cache.html Cache] / [http://static.springsource.org/spring/docs/3.1.x/javadoc-api/org/springframework/cache/CacheManager.html CacheManager] implementation.
   # Providers (spymemcached and xmemcached) in separated modules.
   # Sample project [http://code.google.com/p/simple-spring-memcached/source/browse/#svn%2Ftrunk%2Fspring-cache-integration-test spring-cache-integration-test] that shows how to use SSM as a Spring Cache backend.
-  # Per method expiration time while using SSM as a backend for Spring 3.1 Cache.
+  # [Getting_Started#Custom_expiration_time Per method expiration time] while using SSM as a backend for Spring 3.1 Cache.
   # Custom default transcoder.
   # Rewrite serialization logic, for each type: java, json or custom serialization can be used.
   # In case of json serialization store information about serialized type.
