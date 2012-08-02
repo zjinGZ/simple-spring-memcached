@@ -20,7 +20,6 @@
   * Accept a Spring bean name as the converter from parameters to ids
   *  [http://static.springsource.org/spring/docs/3.0.7.RELEASE/reference/expressions.html SpEL] for custom cache key generation
   * Conditional caching
-  * Infinispan support (through memcached protocol)
 
 == Requested Features ==
   * Provide a way for a single value to be referred to by several keys (either multiple-keys or primary-and-secondary keys)
@@ -35,4 +34,5 @@
   * Cache Disabling --> in *2.0.0*
   * Runtime memcached node switching --> in *2.0.0*
   * Integration with Spring 3.1 Cache abstraction --> in *3.0.0*
+  * Infinispan support (through memcached protocol) --> in *3.0.0*
  
