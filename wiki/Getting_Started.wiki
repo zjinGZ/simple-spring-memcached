@@ -143,7 +143,7 @@ In SSM, you are able to identify 'key objects'. These are the objects that Simpl
 Key can be generated using more than one key object. The (non-namespaced) unique key is a concatenation of single keys generated from each key object and joined using '/'. 
 
 == The Big 9 Annotations ==
-The next 9 annotations are the real meat of this project. These are the annotations that mark where caching is to be applied. There are two dimensions that these annotations cover: cardinality (are we working with a single value with an assigned key, a single value with a calculated key, or a 'multiplexed' set of values with calculated keys); and usage pattern (read-through, update, or invalidate).
+The next 9 annotations are the real meat of this project. These are the annotations that mark where caching is to be applied. There are two dimensions that these annotations cover: cardinality (are we working with a single value with an assigned key, a single value with a calculated key, or a 'multiplexed' (collection) set of values with calculated keys); and usage pattern (read-through, update, or invalidate).
 
 === `@ReadThroughSingleCache`, `@ReadThroughMultiCache`, `@ReadThroughAssignCache` ===
 These are the most frequently used annotations. They follow the standard caching flow as follows:
