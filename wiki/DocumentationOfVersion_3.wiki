@@ -1,4 +1,5 @@
 #summary Useful information about current version 3.0.x
+#labels Deprecated
 
 <wiki:toc max_depth="3" />
 
