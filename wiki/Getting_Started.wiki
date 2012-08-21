@@ -30,7 +30,7 @@ For [http://code.google.com/p/spymemcached/ spymemcached] add dependency:
   <version>3.0.2</version>
 </dependency>
 }}}
-It uses _spymemcached 3.8.1_. It was unavailable in central maven repository so I've deployed it under changed groupId.
+It uses _spymemcached 2.8.1_. It was unavailable in central maven repository so I've deployed it under changed groupId.
 
   * xmemcached:
 
