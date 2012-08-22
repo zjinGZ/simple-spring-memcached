@@ -215,6 +215,15 @@ The data that gets cached in this scenario is the output data (`@ReturnDataUpdat
 
 === Looking for more examples? ===
 More examples are in [http://code.google.com/p/simple-spring-memcached/source/browse/#svn%2Ftags%2Fsimple-spring-memcached-parent-3.0.2%2Fintegration-test%2Fsrc integration-test] project.
+By default this project requires 2 memcached instances on 127.0.0.1:11211 and 127.0.0.1:11212. The project can run with xmemcached or spymemcached:
+  * xmemcached 
+{{{
+mvn test -Pxmemcached -Dssm.defaultSerializationType=PROVIDER
+}}}
+  * spymemcached
+{{{
+mvn test -Pspymemcached -Dssm.defaultSerializationType=PROVIDER
+}}}
 
 = Spring 3.1 Cache Integration =
 Spring 3.1 introduced new [http://static.springsource.org/spring/docs/3.1.2.RELEASE/spring-framework-reference/html/cache.html cache abstraction]. Out of the box spring provides integration with two storages ConcurrentMap and [http://ehcache.org/ ehcache]. Simple Spring Memcached can be used as another storage. Using SSM users of Spring 3.1 Cache can store data in memcached.
