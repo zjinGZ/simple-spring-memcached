@@ -49,6 +49,7 @@ You will need to inform your `ApplicationContext` of Simple-Spring-Memcached's c
 {{{
 <import resource="simplesm-context.xml" />
 }}}
+The xml file is available in simple-spring-memcached-3.0.2.jar.
 
 Simple-Spring-Memcached also requires an annotation to enable AOP access, which in turn requires the AOP namespace being defined:
 {{{
