@@ -364,7 +364,7 @@ Memcached doesn't support cache zones or cache namespaces, so there's no such op
 </beans>
 }}}
 
-All classes related to integration SSM with Spring Cache (com.google.code.ssm.spring.*: SSMCache, SSMCacheManager) are included in spring-cache-3.0.2.jar (com.google.code.simple-spring-memcached:spring-cache). This jar is a part of SSM project, it is not a part of Spring project.
+All classes related to integration SSM with Spring Cache (com.google.code.ssm.spring: SSMCache, SSMCacheManager) are included in spring-cache-3.0.2.jar (com.google.code.simple-spring-memcached:spring-cache). This jar is a part of SSM project, it is not a part of Spring project.
 
 == Features ==
 === Custom expiration time ===
