@@ -10,7 +10,7 @@
 = Version 3 =
 
 == 3.0.3 (In Progress) ==
-  * Issue 8: Instead of default toString() use @CacheKeyMethod from superclass (*In Progress*)
+  * Issue 8: Instead of default toString() use @CacheKeyMethod from superclass (*Done*)
 
 == 3.0.2 (Done) ==
   * Issue 6: CacheFactory should be a DisposableBean to permit server shutdown (*Done*)
