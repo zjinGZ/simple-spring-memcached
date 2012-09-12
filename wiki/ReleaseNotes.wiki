@@ -3,7 +3,6 @@
 
 ----
 == Version 3.0.2 (07-08-2012) ==
-
   # CacheFactory should be a DisposableBean to permit server shutdown (issue 6).
 
 <br/>
