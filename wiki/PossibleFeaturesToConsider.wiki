@@ -14,13 +14,13 @@
   * Internal stats
   * Multiple logical memcached nodes
   * Built-in second-level cache?
-  * How to handle updates/invalidates to multiple items
   * 'Observer' pattern access for writes/reads/updates/deletes
   * Thread name/id on logging?
   * Accept a Spring bean name as the converter from parameters to ids
   *  [http://static.springsource.org/spring/docs/3.0.7.RELEASE/reference/expressions.html SpEL] for custom cache key generation
   * Conditional caching
   * Boom protect
+  * Cache annotations on interfaces
 
 == Requested Features ==
   * Provide a way for a single value to be referred to by several keys (either multiple-keys or primary-and-secondary keys)
