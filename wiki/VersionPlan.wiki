@@ -13,6 +13,9 @@
   * Issue 8: Instead of default toString() use @CacheKeyMethod from superclass (*Done*)
   * Issue 11: Ability to order the cache advice (*Done*)
 
+== ~~3.0.3~~ (Rejected and moved to 3.1.0) ==
+  * Issue 8: Instead of default toString() use @CacheKeyMethod from superclass (*Done*)
+
 == 3.0.2 (Done) ==
   * Issue 6: CacheFactory should be a DisposableBean to permit server shutdown (*Done*)
 
