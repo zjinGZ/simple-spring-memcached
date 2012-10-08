@@ -12,6 +12,7 @@
 == 3.1.0 (In Progress) ==
   * Issue 8: Instead of default toString() use @CacheKeyMethod from superclass (*Done*)
   * Issue 11: Ability to order the cache advice (*Done*)
+  * Update spymemcached to version 2.8.4 and deploy to central repository (*Done*)
   * Improve quality of SSM using Continuous Integration:  [https://ragnor.ci.cloudbees.com/job/SSM/ Jenkins at CloudBees] (*Done*)
   * Create maven plugin to run embedded memcached and use it in integration tests on [https://ragnor.ci.cloudbees.com/ Jenkins] (*Done*) 
 
