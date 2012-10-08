@@ -13,7 +13,7 @@
   * Issue 8: Instead of default toString() use @CacheKeyMethod from superclass (*Done*)
   * Issue 11: Ability to order the cache advice (*Done*)
   * Improve quality of SSM using Continuous Integration:  [https://ragnor.ci.cloudbees.com/job/SSM/ Jenkins at CloudBees] (*Done*)
-  * Create maven plugin to run embedded memcached and use it in integration tests on [https://ragnor.ci.cloudbees.com/job/SSM/ Jenkins] (*In Progress*) 
+  * Create maven plugin to run embedded memcached and use it in integration tests on [https://ragnor.ci.cloudbees.com/job/SSM/ Jenkins] (*Done*) 
 
 == ~~3.0.3~~ (Rejected and moved to 3.1.0) ==
   * Issue 8: Instead of default toString() use @CacheKeyMethod from superclass (*Done*)
