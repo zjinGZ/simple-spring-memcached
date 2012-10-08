@@ -2,6 +2,15 @@
 =Release Notes=
 
 ----
+== Version 3.1.0 (08-10-2012) ==
+  # Ability to order the cache advice (issue 11).
+  # Instead of default toString() use @CacheKeyMethod from superclass (issue 8).
+  # Update spymemcached to version 2.8.4 and deploy to central repository.
+  # Improve quality of SSM using Continuous Integration [https://ragnor.ci.cloudbees.com/ Jenkins at CloudBees].
+  # Maven plugin to run embedded memcached (jmemcached) in integration tests on Jenkins. 
+
+<br/>
+
 == Version 3.0.2 (07-08-2012) ==
   # CacheFactory should be a DisposableBean to permit server shutdown (issue 6).
 
