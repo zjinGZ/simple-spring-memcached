@@ -1,4 +1,4 @@
-#summary Useful information about current version 3.0.x
+#summary Useful information about version 3.0.x
 #labels Deprecated
 
 <wiki:toc max_depth="3" />
@@ -27,7 +27,7 @@ For [http://code.google.com/p/spymemcached/ spymemcached] add dependency:
 <dependency>
   <groupId>com.google.code.simple-spring-memcached</groupId>
   <artifactId>spymemcached-provider</artifactId>
-  <version>3.0.0</version>
+  <version>3.0.2</version>
 </dependency>
 }}}
 It uses _spymemcached 2.8.1_. It was unavailable in central maven repository so I've deployed it under changed groupId.
@@ -39,7 +39,7 @@ For [http://code.google.com/p/xmemcached/ xmemcached] add dependency:
 <dependency>
   <groupId>com.google.code.simple-spring-memcached</groupId>
   <artifactId>xmemcached-provider</artifactId>
-  <version>3.0.0</version>
+  <version>3.0.2</version>
 </dependency>	
 }}}
 It uses _xmemcached 1.3.8_.
@@ -49,6 +49,7 @@ You will need to inform your `ApplicationContext` of Simple-Spring-Memcached's c
 {{{
 <import resource="simplesm-context.xml" />
 }}}
+The xml file is available in simple-spring-memcached-3.0.2.jar.
 
 Simple-Spring-Memcached also requires an annotation to enable AOP access, which in turn requires the AOP namespace being defined:
 {{{
@@ -143,7 +144,7 @@ In SSM, you are able to identify 'key objects'. These are the objects that Simpl
 Key can be generated using more than one key object. The (non-namespaced) unique key is a concatenation of single keys generated from each key object and joined using '/'. 
 
 == The Big 9 Annotations ==
-The next 9 annotations are the real meat of this project. These are the annotations that mark where caching is to be applied. There are two dimensions that these annotations cover: cardinality (are we working with a single value with an assigned key, a single value with a calculated key, or a 'multiplexed' set of values with calculated keys); and usage pattern (read-through, update, or invalidate).
+The next 9 annotations are the real meat of this project. These are the annotations that mark where caching is to be applied. There are two dimensions that these annotations cover: cardinality (are we working with a single value with an assigned key, a single value with a calculated key, or a 'multiplexed' (collection) set of values with calculated keys); and usage pattern (read-through, update, or invalidate).
 
 === `@ReadThroughSingleCache`, `@ReadThroughMultiCache`, `@ReadThroughAssignCache` ===
 These are the most frequently used annotations. They follow the standard caching flow as follows:
@@ -214,12 +215,21 @@ This example also shows how the `@*AssignCache` annotations work. Instead of rel
 The data that gets cached in this scenario is the output data (`@ReturnDataUpdateContent`). The list of primary keys is stored as a single value under the id "MyFav" within the namespace of "CplxObj".
 
 === Looking for more examples? ===
-More examples are in [http://code.google.com/p/simple-spring-memcached/source/browse/#svn%2Ftags%2Fsimple-spring-memcached-parent-3.0.0%2Fintegration-test%2Fsrc integration-test] project.
+More examples are in [http://code.google.com/p/simple-spring-memcached/source/browse/#svn%2Ftags%2Fsimple-spring-memcached-parent-3.0.2%2Fintegration-test%2Fsrc integration-test] project.
+By default this project requires 2 memcached instances on 127.0.0.1:11211 and 127.0.0.1:11212. The project can run with xmemcached or spymemcached:
+  * xmemcached 
+{{{
+mvn test -Pxmemcached -Dssm.defaultSerializationType=PROVIDER
+}}}
+  * spymemcached
+{{{
+mvn test -Pspymemcached -Dssm.defaultSerializationType=PROVIDER
+}}}
 
 = Spring 3.1 Cache Integration =
 Spring 3.1 introduced new [http://static.springsource.org/spring/docs/3.1.2.RELEASE/spring-framework-reference/html/cache.html cache abstraction]. Out of the box spring provides integration with two storages ConcurrentMap and [http://ehcache.org/ ehcache]. Simple Spring Memcached can be used as another storage. Using SSM users of Spring 3.1 Cache can store data in memcached.
 
-== Dependencies ==
+== Dependency ==
 Similar to standard usage of SSM you need to choose one of available java memcached providers. 
 
   * spymemcached:
@@ -227,12 +237,12 @@ Similar to standard usage of SSM you need to choose one of available java memcac
 <dependency>
   <groupId>com.google.code.simple-spring-memcached</groupId>
   <artifactId>spring-cache</artifactId>
-  <version>3.0.0</version>
+  <version>3.0.2</version>
 </dependency>
 <dependency>
   <groupId>com.google.code.simple-spring-memcached</groupId>
   <artifactId>spymemcached-provider</artifactId>
-  <version>3.0.0</version>
+  <version>3.0.2</version>
 </dependency>
 }}}
 
@@ -241,16 +251,16 @@ Similar to standard usage of SSM you need to choose one of available java memcac
 <dependency>
   <groupId>com.google.code.simple-spring-memcached</groupId>
   <artifactId>spring-cache</artifactId>
-  <version>3.0.0</version>
+  <version>3.0.2</version>
 </dependency>
 <dependency>
   <groupId>com.google.code.simple-spring-memcached</groupId>
   <artifactId>xmemcached-provider</artifactId>
-  <version>3.0.0</version>
+  <version>3.0.2</version>
 </dependency>	
 }}}
 
-== Configuration ==
+== Settings ==
 If SSM is used only through Spring 3.1 Cache abstraction importing `simplesm-context.xml` is not required. 
 
 Annotations provided by Spring 3.1 Cache abstraction ([http://static.springsource.org/spring/docs/3.1.x/javadoc-api/index.html?org/springframework/cache/annotation/Cacheable.html @Cacheable] and [http://static.springsource.org/spring/docs/3.1.x/javadoc-api/index.html?org/springframework/cache/annotation/CachePut.html @CachePut]) don't allow to pass expiration time. SSM and memcached required expiration time in some operations so it has to be set somehow. The simplest way is to set default expiration time on cache while creating `SSMCache` object. This expiration will be used in all operations on the cache. 
@@ -355,6 +365,7 @@ Memcached doesn't support cache zones or cache namespaces, so there's no such op
 </beans>
 }}}
 
+All classes related to integration SSM with Spring Cache (com.google.code.ssm.spring: SSMCache, SSMCacheManager) are included in spring-cache-3.0.2.jar (com.google.code.simple-spring-memcached:spring-cache). This jar is a part of SSM project, it is not a part of Spring project.
 
 == Features ==
 === Custom expiration time ===
@@ -416,6 +427,14 @@ public User getByPk(int id) {
 }}}
 
 
+= Alternative cache storage =
+Simple Spring Memcached despite its name can store cached data not only in memcached. Data may be stored in all cache providers that support memcached protocol (the [https://github.com/memcached/memcached/blob/master/doc/protocol.txt textual] or [https://github.com/memcached/memcached/blob/master/doc/protocol-binary.xml binary]). All those caches can be used also with Spring Cache (through SSM).
+
+== Infinispan ==
+Infinispan supports memcached text protocol, so it can be used with SSM instead of (or together with) memcached server. [https://docs.jboss.org/author/display/ISPN/Using+Infinispan+Memcached+Server Here] you can find more information.
+
+== Couchbase ==
+According to [http://www.couchbase.com/docs/couchbase-manual-1.8/couchbase-architecture-apis-memcached-protocol.html documentation] Couchbase supports the textual memcached protocol.
 
 = Additional Information =
 
