@@ -141,13 +141,13 @@ Sample configuration using quartz 1.8.5 and spring context support
 
 = Snapshot build ==
 
-Current snapshot (development) build of SSM is available in [https://oss.sonatype.org/content/repositories/snapshots/com/google/code/simple-spring-memcached/ Sonatype OSS maven repository].
+Current snapshot (development) build of SSM is available in [http://repository-ragnor.forge.cloudbees.com/snapshot/com/google/code/simple-spring-memcached/ SSM CloudBees maven repository].
 {{{
   <repositories>
      <repository>
-        <id>oss.snaphost</id>
-        <name>OSS snapshots</name>
-        <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
+        <id>ssm.snaphost</id>
+        <name>SSM snapshots</name>
+        <url>http://repository-ragnor.forge.cloudbees.com/snapshot/</url>
         <snapshots>
            <enabled>true</enabled>
         </snapshots>
