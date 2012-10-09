@@ -9,7 +9,7 @@
 
 = Version 3 =
 
-== 3.1.0 (In Progress) ==
+== 3.1.0 (Done) ==
   * Issue 8: Instead of default toString() use @CacheKeyMethod from superclass (*Done*)
   * Issue 11: Ability to order the cache advice (*Done*)
   * Update spymemcached to version 2.8.4 and deploy to central repository (*Done*)
