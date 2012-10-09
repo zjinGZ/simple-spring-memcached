@@ -438,10 +438,10 @@ According to [http://www.couchbase.com/docs/couchbase-manual-1.8/couchbase-archi
 
 = Additional Information =
 
-=== Exceptions ===
+== Exceptions ==
 Great care was taken while writing SSM to preserve the functionality of any surrounding code. If an exception is thrown anywhere in the SSM code, we've gone to great lengths to catch and log (slf4j) as much information as possible from the exception, but we refrain from passing that exception up to the end user.
 
-=== Serialization ===
+== Serialization ==
 Any of the objects being saved to the cache *should* implement `java.io.Serializable` in the very least, but it is [http://www.onjava.com/pub/a/onjava/excerpt/JavaRMI_10/index.html?page=5 highly recommended] that you implement `java.io.Externalizable` in as many classes of the cache data as is possible. Java serialization used by providers (spymemcached or xmemcached) is a default mechanism. <br/> There are four available serialization types (`com.google.code.ssm.api.format.SerializationType`):
   * PROVIDER: the default one, delegate serialization of cached object to memcached client (spymemcached or xmemcached)
   * JSON: through amazing [http://wiki.fasterxml.com/JacksonHome jackson] library, as a part of serialized string object type is stored
@@ -454,6 +454,16 @@ setting custom transcoder by `com.google.code.ssm.CacheFactory#setCustomTranscod
 
 ==== Different serialization type per method ====
 Serialization type can be also specified per cached method using `@com.google.code.ssm.api.format.Serialization` annotation. This annotation overwrite default serialization type set in `CacheFactory`.
+
+== Order of cache advice ==
+
+Since 3.1.0 SSM cache advice runs before transaction advice. The default SSM cache advice order value is 0. The order can be set in the application context file to any custom value:
+{{{
+<bean class="com.google.code.ssm.Settings">
+  <property name="order" value="500" />
+</bean>
+}}}
+
 
 = Contact Us =
 If you have any questions, feel free to ask them on the [http://groups.google.com/group/simple-spring-memecached Google Group]. (*UPDATE*: Sorry, this link was bad up until 02 Aug '09, because I fat-fingered when creating the Google Group. I incorrectly misspelled it as 'simple-spring-memEcached'. So sorry about that!)
