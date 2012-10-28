@@ -9,6 +9,9 @@
 
 = Version 3 =
 
+== 3.1.1 (In progress) ==
+  * Remove deprecated classes
+
 == 3.1.0 (Done) ==
   * Issue 8: Instead of default toString() use @CacheKeyMethod from superclass (*Done*)
   * Issue 11: Ability to order the cache advice (*Done*)
