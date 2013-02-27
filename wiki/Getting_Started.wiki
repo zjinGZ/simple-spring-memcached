@@ -81,7 +81,6 @@ In order to tell Simple-Spring-Memcached about the specifics of *your* environme
   <aop:aspectj-autoproxy /> 
 
   <bean name="defaultMemcachedClient" class="com.google.code.ssm.CacheFactory">
-    <property name="cacheName" value="defaultCache" />
     <property name="cacheClientFactory">
       <bean name="cacheClientFactory" class="com.google.code.ssm.providers.spymemcached.MemcacheClientFactoryImpl" />
     </property>
@@ -114,7 +113,6 @@ In order to tell Simple-Spring-Memcached about the specifics of *your* environme
   <aop:aspectj-autoproxy />  
 
   <bean name="defaultMemcachedClient" class="com.google.code.ssm.CacheFactory">
-    <property name="cacheName" value="defaultCache" />
     <property name="cacheClientFactory">
       <bean name="cacheClientFactory" class="com.google.code.ssm.providers.xmemcached.MemcacheClientFactoryImpl" />
     </property>
