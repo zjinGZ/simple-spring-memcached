@@ -10,7 +10,11 @@
 = Version 3 =
 
 == 3.1.1 (In progress) ==
-  * Remove deprecated classes
+  * Remove deprecated classes (*Done*)
+  * Issue 12: Integration of ssm with mvc spring application throws exception with jackson 1.7.1 (*Done*)
+  * Issue 15: Using @ReturnValueKeyProvider for an @UpdateSingleCache annotated method does not generate key properly
+  * Update xmemcached to 1.4.1 (*Done*)
+
 
 == 3.1.0 (Done) ==
   * Issue 8: Instead of default toString() use @CacheKeyMethod from superclass (*Done*)
