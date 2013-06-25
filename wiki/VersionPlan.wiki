@@ -10,6 +10,7 @@
 = Version 3 =
 
 == 3.2.0 (In progress) ==
+  *  Extend spymemcached provider to support more settings from ConnectionFactoryBuilder
   * Extend xmemcached provider to support more settings from XMemcachedClientBuilder
   * Issue 18: Add connect timeout from CacheClientFactory for xmemcached (*In progress*)
   * Update spymemcached to 2.9.0 and switch to official artifact that is now available in central repository in net.spy group (*Done*)
