@@ -10,13 +10,13 @@
 = Version 3 =
 
 == 3.2.0 (In progress) ==
-  *  Extend spymemcached provider to support more settings from ConnectionFactoryBuilder
-  * Extend xmemcached provider to support more settings from XMemcachedClientBuilder
-  * Issue 18: Add connect timeout from CacheClientFactory for xmemcached (*In progress*)
+  *  Extend spymemcached provider to support more settings from ConnectionFactoryBuilder (*Done*)
+  * Extend xmemcached provider to support more settings from XMemcachedClientBuilder (*Done*)
+  * Issue 18: Add connect timeout from CacheClientFactory for xmemcached (*Done*)
   * Update spymemcached to 2.9.0 and switch to official artifact that is now available in central repository in net.spy group (*Done*)
   * Remove deprecated classes (*Done*)
   * Issue 12: Integration of ssm with mvc spring application throws exception with jackson 1.7.1 (*Done*)
-  * Issue 15: Using @ReturnValueKeyProvider for an @UpdateSingleCache annotated method does not generate key properly
+  * Issue 15: Using @ReturnValueKeyProvider for an @UpdateSingleCache annotated method does not generate key properly (*Done*)
   * Update xmemcached to 1.4.1 (*Done*)
 
 
