@@ -9,7 +9,7 @@
 
 = Version 3 =
 
-== 3.2.0 (In progress) ==
+== 3.2.0 (Done) ==
   *  Extend spymemcached provider to support more settings from ConnectionFactoryBuilder (*Done*)
   * Extend xmemcached provider to support more settings from XMemcachedClientBuilder (*Done*)
   * Issue 18: Add connect timeout from CacheClientFactory for xmemcached (*Done*)
