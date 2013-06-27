@@ -213,7 +213,7 @@ This example also shows how the `@*AssignCache` annotations work. Instead of rel
 The data that gets cached in this scenario is the output data (`@ReturnDataUpdateContent`). The list of primary keys is stored as a single value under the id "MyFav" within the namespace of "CplxObj".
 
 === Looking for more examples? ===
-More examples are in [http://code.google.com/p/simple-spring-memcached/source/browse/#svn%2Ftags%2Fsimple-spring-memcached-parent-3.2.0%2Fintegration-test%2Fsrc integration-test] project.
+More examples are in [http://code.google.com/p/simple-spring-memcached/source/browse/#svn%2Ftags%23.2.0%2Fintegration-test%2Fsrc integration-test] project.
 By default this project requires 2 memcached instances on 127.0.0.1:11211 and 127.0.0.1:11212. By default in integration tests embedded memcached (jmemcached) instances are used. The project can run with xmemcached or spymemcached:
   * xmemcached 
 {{{
