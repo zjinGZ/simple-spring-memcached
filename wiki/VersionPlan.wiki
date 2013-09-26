@@ -9,6 +9,9 @@
 
 = Version 3 =
 
+== 3.2.1 (In Progress) ==
+  * Issue 20: ReadThroughMultiCache returns incomplete results if memcached client times out (*Done*)
+
 == 3.2.0 (Done) ==
   *  Extend spymemcached provider to support more settings from ConnectionFactoryBuilder (*Done*)
   * Extend xmemcached provider to support more settings from XMemcachedClientBuilder (*Done*)
