@@ -9,7 +9,7 @@
 
 = Version 3 =
 
-== 3.2.1 (In Progress) ==
+== 3.2.1 (Done) ==
   * Issue 20: ReadThroughMultiCache returns incomplete results if memcached client times out (*Done*)
   * Update spymemcached to 2.10.0 (*Done*)
   * Update xmemcached to 1.4.2 (*Done*)
