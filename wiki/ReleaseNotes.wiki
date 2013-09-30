@@ -2,6 +2,13 @@
 =Release Notes=
 
 ----
+== Version 3.2.0 (27-09-2013) ==
+  # Incomplete results in ReadThroughMultiCache if memcached client times out (issue 20).
+  # Update spymemcached to 2.10.0.
+  # Update xmemcached to 1.4.2.
+
+<br/>
+
 == Version 3.2.0 (26-06-2013) ==
   # Extend spymemcached provider to support more settings from ConnectionFactoryBuilder.
   # Extend xmemcached provider to support more settings from XMemcachedClientBuilder.
