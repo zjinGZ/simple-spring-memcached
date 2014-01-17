@@ -2,6 +2,15 @@
 =Release Notes=
 
 ----
+== Version 3.3.0 (17-01-2014) ==
+  # Use cache name or alias as a prefix in key (issue 21).
+  # Unsorted results when using ReadThroughMultiCacheAdvice (issue 23).
+  # Support server weights for XMemcachedClientBuilder (issue 24).
+  # Update spymemcached to 2.10.4.
+  # Instead of Throwable catch Exception to avoid catching Error.
+
+<br/>
+
 == Version 3.2.1 (27-09-2013) ==
   # Incomplete results in ReadThroughMultiCache if memcached client times out (issue 20).
   # Update spymemcached to 2.10.0.
