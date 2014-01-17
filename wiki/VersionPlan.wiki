@@ -13,7 +13,7 @@
   * Issue 21: Use cache name or alias as a prefix in key (*Done*)
   * Issue 23: Unsorted results when using ReadThroughMultiCacheAdvice (*Done*)
   * Issue 24: Support server weights for XMemcachedClientBuilder (*Done*)
-  * Update spymemcached to 2.10.3 (*Done*)
+  * Update spymemcached to 2.10.4 (*Done*)
   * Instead of Throwable catch Exception to avoid catching Error (*Done*)
 
 == 3.2.1 (Done) ==
