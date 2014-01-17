@@ -9,7 +9,7 @@
 
 = Version 3 =
 
-== 3.3.0 (In progress) ==
+== 3.3.0 (Done) ==
   * Issue 21: Use cache name or alias as a prefix in key (*Done*)
   * Issue 23: Unsorted results when using ReadThroughMultiCacheAdvice (*Done*)
   * Issue 24: Support server weights for XMemcachedClientBuilder (*Done*)
