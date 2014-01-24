@@ -1,0 +1,3 @@
+#summary JavaDocs for current release
+
+JavaDocs of current release are available [http://simple-spring-memcached.googlecode.com/svn/docs/3.3.0/apidocs/index.html here].
