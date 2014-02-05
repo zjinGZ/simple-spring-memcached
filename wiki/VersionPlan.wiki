@@ -9,6 +9,10 @@
 
 = Version 3 =
 
+== 3.3.1 (In Progress) ==
+  * Issue 28: Update jackson from 1.9.x to latest 2.3.x (*Done*)
+  * Issue 29: Custom json/jackson serializers are not called (*Done*)
+
 == 3.3.0 (Done) ==
   * Issue 21: Use cache name or alias as a prefix in key (*Done*)
   * Issue 23: Unsorted results when using ReadThroughMultiCacheAdvice (*Done*)
