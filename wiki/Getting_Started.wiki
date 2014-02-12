@@ -14,7 +14,7 @@ This project enables caching in Spring-managed beans, by using Java 5 Annotation
 The first thing you'll need, of course, is at least one running Memcached server. (Installation and usage instructions may be found [http://memcached.org/ on the memcached project page].)
 
 In addition to the Simple-Spring-Memcached JAR files, the following libraries must be accessible (if maven is used you can skip it because all libraries will be included automatically):
-  * Spring is an assumed dependency, and this project was built against the 3.0.7.RELEASE version. A Spring library that is 3.0.7.RELEASE compatible must included be on the classpath. For *spring-cache* module Spring 3.1.2.RELEASE is required.
+  * Spring is an assumed dependency, and this project was built against the 3.0.7.RELEASE version. A Spring library that is 3.0.7.RELEASE compatible must included be on the classpath. For *spring-cache* module Spring 3.1.3.RELEASE is required.
   * Two AspectJ libraries are also required, and this project was built against the 1.6.8 versions. These libraries may have version dependencies with your Spring version, so you are free to add whatever versions are necessary to the classpath.
   * This project uses Simple Logging Facade for Java (SLF4J), and is built against [http://www.slf4j.org/ SLF4J], though you are welcome to provide any other implementation.
 
@@ -30,7 +30,7 @@ For [http://code.google.com/p/spymemcached/ spymemcached] add dependency:
   <version>3.3.0</version>
 </dependency>
 }}}
-It uses _spymemcached 2.8.4_. It was unavailable in central maven repository so I've deployed it under changed groupId.
+It uses _spymemcached 2.10.4_.
 
   * xmemcached:
 
@@ -42,7 +42,7 @@ For [http://code.google.com/p/xmemcached/ xmemcached] add dependency:
   <version>3.3.0</version>
 </dependency>	
 }}}
-It uses _xmemcached 1.3.8_.
+It uses _xmemcached 1.4.3_.
 
 = Configuration =
 You will need to inform your `ApplicationContext` of Simple-Spring-Memcached's configuration. This is done with an `import` configuration directive:
