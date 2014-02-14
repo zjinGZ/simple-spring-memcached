@@ -289,7 +289,8 @@ Memcached doesn't support cache zones or cache namespaces, so there's no such op
 	  <constructor-arg name="cache" index="0" ref="defaultCache" />
           <!-- 5 minutes -->
 	  <constructor-arg name="expiration" index="1" value="300" />
-          <!-- @CacheEvict(..., "allEntries" = true) doesn't work -->
+          <!-- @CacheEvict(..., "allEntries" = true) won't work because allowClear is false, 
+           so we won't flush accidentally all entries from memcached instance -->
 	  <constructor-arg name="allowClear" index="2" value="false" />
 	</bean>
       </set>
@@ -337,7 +338,8 @@ Memcached doesn't support cache zones or cache namespaces, so there's no such op
 	  <constructor-arg name="cache" index="0" ref="defaultCache" />
           <!-- 5 minutes -->
 	  <constructor-arg name="expiration" index="1" value="300" />
-          <!-- @CacheEvict(..., "allEntries" = true) doesn't work -->
+          <!-- @CacheEvict(..., "allEntries" = true) won't work because allowClear is false, 
+           so we won't flush accidentally all entries from memcached instance -->
 	  <constructor-arg name="allowClear" index="2" value="false" />
 	</bean>
       </set>
@@ -389,7 +391,8 @@ One expiration time for all elements in cache may be insufficient when one cache
 	  <constructor-arg name="cache" index="0" ref="defaultCache" />
           <!-- 5 minutes -->
 	  <constructor-arg name="expiration" index="1" value="300" />
-          <!-- @CacheEvict(..., "allEntries" = true) doesn't work -->
+          <!-- @CacheEvict(..., "allEntries" = true) won't work because allowClear is false, 
+          so we won't flush accidentally all entries from memcached instance -->
 	  <constructor-arg name="allowClear" index="2" value="false" />
 	</bean>
       </set>
