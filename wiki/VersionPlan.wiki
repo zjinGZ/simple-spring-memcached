@@ -9,9 +9,11 @@
 
 = Version 3 =
 
-== 3.3.1 (In Progress) ==
+== 3.4.0 (In Progress) ==
   * Issue 28: Update jackson from 1.9.x to latest 2.3.x (*Done*)
   * Issue 29: Custom json/jackson serializers are not called (*Done*)
+  * Issue 30: MetricCollector support for spymemcached (*Done*)
+  * Issue 31: Remove redundant dependency to aspectjrt (*Done*)
   * Update spymemcached to 2.10.5 (*Done*)
 
 == 3.3.0 (Done) ==
