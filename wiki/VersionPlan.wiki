@@ -14,7 +14,8 @@
   * Issue 29: Custom json/jackson serializers are not called (*Done*)
   * Issue 30: MetricCollector support for spymemcached (*Done*)
   * Issue 31: Remove redundant dependency to aspectjrt (*Done*)
-  * Update spymemcached to 2.10.5 (*Done*)
+  * Update spymemcached to 2.10.6 (*Done*)
+  * Fix compatibility issue with Spring 4.0 (*Done*) 
 
 == 3.3.0 (Done) ==
   * Issue 21: Use cache name or alias as a prefix in key (*Done*)
