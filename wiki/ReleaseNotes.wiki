@@ -2,6 +2,17 @@
 =Release Notes=
 
 ----
+== Version 3.4.0 (28-03-2014) ==
+  # Update jackson from 1.9.x to latest 2.3.x (issue 28).
+  # Custom json/jackson serializers are not called (issue 29).
+  # MetricCollector support for spymemcached (issue 30).
+  # Remove redundant dependency to aspectjrt (issue 31).
+  # Target execution method should not interrupt if memcached server is not reachable ([https://github.com/ragnor/simple-spring-memcached/issues/32 issue 32]).
+  # Update spymemcached to 2.10.6.
+  # Fix compatibility issue with Spring 4.0 Cache Abstraction. 
+
+<br/>
+
 == Version 3.3.0 (17-01-2014) ==
   # Use cache name or alias as a prefix in key (issue 21).
   # Unsorted results when using ReadThroughMultiCacheAdvice (issue 23).
