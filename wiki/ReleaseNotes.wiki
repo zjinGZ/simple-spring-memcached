@@ -7,7 +7,7 @@
   # Custom json/jackson serializers are not called (issue 29).
   # MetricCollector support for spymemcached (issue 30).
   # Remove redundant dependency to aspectjrt (issue 31).
-  # Target execution method should not interrupt if memcached server is not reachable ([https://github.com/ragnor/simple-spring-memcached/issues/32 issue 32]).
+  # Target execution method should not interrupt if memcached server is not reachable (~~[https://github.com/ragnor/simple-spring-memcached/issues/32 issue 32]~~).
   # Update spymemcached to 2.10.6.
   # Fix compatibility issue with Spring 4.0 Cache Abstraction. 
 
