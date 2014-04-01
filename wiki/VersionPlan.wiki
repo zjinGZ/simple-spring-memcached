@@ -9,7 +9,9 @@
 
 = Version 3 =
 
-== 3.4.0 (In Progress) ==
+== 3.4.1 (In Progress) ==
+
+== 3.4.0 (Done) ==
   * Issue 28: Update jackson from 1.9.x to latest 2.3.x (*Done*)
   * Issue 29: Custom json/jackson serializers are not called (*Done*)
   * Issue 30: MetricCollector support for spymemcached (*Done*)
