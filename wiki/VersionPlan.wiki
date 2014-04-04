@@ -10,7 +10,7 @@
 = Version 3 =
 
 == 3.5.0 (In Progress) ==
-  * Add new provider for [https://github.com/amazonwebservices/aws-elasticache-cluster-client-memcached-for-java AWS ElastiCache Cluster Client] (*In Progress*)
+  * Add new provider for [https://github.com/amazonwebservices/aws-elasticache-cluster-client-memcached-for-java AWS ElastiCache Cluster Client] (*Done*)
   * Update spymemcached to 2.11.0
 
 == 3.4.0 (Done) ==
