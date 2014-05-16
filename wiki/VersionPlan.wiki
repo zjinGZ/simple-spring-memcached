@@ -11,7 +11,9 @@
 
 == 3.5.0 (In Progress) ==
   * Add new provider for [https://github.com/amazonwebservices/aws-elasticache-cluster-client-memcached-for-java AWS ElastiCache Cluster Client] (*Done*)
-  * Update spymemcached to 2.11.0
+   * ~~[https://github.com/ragnor/simple-spring-memcached/issues/32 Issue 35]~~: NPE when using ssm.cache.disable=true and SSM as Spring Cache backend (*Done*)
+  * Update xmemcached to 2.0.0 (*Done*)
+  * Update spymemcached to 2.11.2 (*Done*)
 
 == 3.4.0 (Done) ==
   * Issue 28: Update jackson from 1.9.x to latest 2.3.x (*Done*)
