@@ -2,6 +2,16 @@
 =Release Notes=
 
 ----
+== Version 3.5.0 (15-06-2014) ==
+  # Add new provider for AWS ElastiCache Cluster Client with memcached instances auto discovery feature.
+  # Fix NPE when using ssm.cache.disable=true and SSM as Spring Cache backend (~~[https://github.com/ragnor/simple-spring-memcached/issues/35 issue 35]~~).
+  # Expose native memcached client (~~[https://github.com/ragnor/simple-spring-memcached/issues/36 issue 36]~~).
+  # Remove one again redundant dependency to aspectjrt (~~[https://github.com/ragnor/simple-spring-memcached/issues/31 issue 31]~~).
+  # Update xmemcached to 2.0.0.
+  # Update spymemcached to 2.11.3.
+
+<br/>
+
 == Version 3.4.0 (28-03-2014) ==
   # Update jackson from 1.9.x to latest 2.3.x (issue 28).
   # Custom json/jackson serializers are not called (issue 29).
