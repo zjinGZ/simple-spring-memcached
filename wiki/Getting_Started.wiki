@@ -1,4 +1,4 @@
-#summary Useful information about current version 3.4.0
+#summary Useful information about current version 3.5.0
 #labels Featured
 
 <wiki:toc max_depth="3" />
@@ -27,10 +27,10 @@ For [http://code.google.com/p/spymemcached/ spymemcached] add dependency:
 <dependency>
   <groupId>com.google.code.simple-spring-memcached</groupId>
   <artifactId>spymemcached-provider</artifactId>
-  <version>3.4.0</version>
+  <version>3.5.0</version>
 </dependency>
 }}}
-It uses _spymemcached 2.10.6_.
+It uses _spymemcached 2.11.3_.
 
   * xmemcached:
 
@@ -39,17 +39,17 @@ For [http://code.google.com/p/xmemcached/ xmemcached] add dependency:
 <dependency>
   <groupId>com.google.code.simple-spring-memcached</groupId>
   <artifactId>xmemcached-provider</artifactId>
-  <version>3.4.0</version>
+  <version>3.5.0</version>
 </dependency>	
 }}}
-It uses _xmemcached 1.4.3_.
+It uses _xmemcached 2.0.0_.
 
 = Configuration =
 You will need to inform your `ApplicationContext` of Simple-Spring-Memcached's configuration. This is done with an `import` configuration directive:
 {{{
 <import resource="simplesm-context.xml" />
 }}}
-The xml file is available in simple-spring-memcached-3.4.0.jar.
+The xml file is available in simple-spring-memcached-3.5.0.jar.
 
 Simple-Spring-Memcached also requires an annotation to enable AOP access, which in turn requires the AOP namespace being defined:
 {{{
@@ -213,7 +213,7 @@ This example also shows how the `@*AssignCache` annotations work. Instead of rel
 The data that gets cached in this scenario is the output data (`@ReturnDataUpdateContent`). The list of primary keys is stored as a single value under the id "MyFav" within the namespace of "CplxObj".
 
 === Looking for more examples? ===
-More examples are in [https://github.com/ragnor/simple-spring-memcached/tree/3.4.0/integration-test integration test] project.
+More examples are in [https://github.com/ragnor/simple-spring-memcached/tree/3.5.0/integration-test integration test] project.
 By default this project requires 2 memcached instances on 127.0.0.1:11211 and 127.0.0.1:11212. By default in integration tests embedded memcached (jmemcached) instances are used. The project can run with xmemcached or spymemcached:
   * xmemcached 
 {{{
@@ -235,12 +235,12 @@ Similar to standard usage of SSM you need to choose one of available java memcac
 <dependency>
   <groupId>com.google.code.simple-spring-memcached</groupId>
   <artifactId>spring-cache</artifactId>
-  <version>3.4.0</version>
+  <version>3.5.0</version>
 </dependency>
 <dependency>
   <groupId>com.google.code.simple-spring-memcached</groupId>
   <artifactId>spymemcached-provider</artifactId>
-  <version>3.4.0</version>
+  <version>3.5.0</version>
 </dependency>
 }}}
 
@@ -249,12 +249,12 @@ Similar to standard usage of SSM you need to choose one of available java memcac
 <dependency>
   <groupId>com.google.code.simple-spring-memcached</groupId>
   <artifactId>spring-cache</artifactId>
-  <version>3.4.0</version>
+  <version>3.5.0</version>
 </dependency>
 <dependency>
   <groupId>com.google.code.simple-spring-memcached</groupId>
   <artifactId>xmemcached-provider</artifactId>
-  <version>3.4.0</version>
+  <version>3.5.0</version>
 </dependency>	
 }}}
 
@@ -365,7 +365,7 @@ Memcached doesn't support cache zones or cache namespaces, so there's no such op
 </beans>
 }}}
 
-All classes related to integration SSM with Spring Cache (com.google.code.ssm.spring: SSMCache, SSMCacheManager) are included in spring-cache-3.4.0.jar (com.google.code.simple-spring-memcached:spring-cache). This jar is a part of SSM project, it is not a part of Spring project.
+All classes related to integration SSM with Spring Cache (com.google.code.ssm.spring: SSMCache, SSMCacheManager) are included in spring-cache-3.5.0.jar (com.google.code.simple-spring-memcached:spring-cache). This jar is a part of SSM project, it is not a part of Spring project.
 
 == Features ==
 === Custom expiration time ===
