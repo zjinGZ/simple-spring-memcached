@@ -550,12 +550,28 @@ Infinispan supports memcached text protocol, so it can be used with SSM instead 
 According to [http://www.couchbase.com/docs/couchbase-manual-1.8/couchbase-architecture-apis-memcached-protocol.html documentation] Couchbase supports the textual memcached protocol.
 
 == Amazon (AWS) ElastiCache ==
-Amazon allow to create Cache Clusters, each comprised of one or more Cache Nodes. Each Cache Cluster is a distributed, in-memory cache that can be accessed using the Memcached protocol. You can use SSM to connect to ElastiCache, just provide address to your instance in CacheFactory e.g.:
+Amazon allow to create Cache Clusters, each comprised of one or more Cache Nodes. Each Cache Cluster is a distributed, in-memory cache that can be accessed using the Memcached protocol. You can use SSM with any of available providers to connect to ElastiCache, just provide address to your instance in CacheFactory e.g.:
 {{{
  <bean class="com.google.code.ssm.config.DefaultAddressProvider">
      <property name="address" value="xxxxx.yyyyy.cache.amazonaws.com:11211"/>
  </bean>
 }}}
+If you don't want to provide static address of memcached instances but instead use auto discovery feature then choose aws-elsticache-provider and in your CacheFactory provide address to configuration endpoint (addressProvider):
+{{{
+ <bean class="com.google.code.ssm.config.DefaultAddressProvider">
+     <!-- set only single address to configuration endpoint -->
+     <property name="address" value="xxxxx.yyyyy.cfg.zzzz.cache.amazonaws.com:11211"/>
+ </bean>
+}}}
+and set mode to dynamic (configuration):
+{{{
+ <bean class="com.google.code.ssm.providers.elasticache.ElastiCacheConfiguration">
+     <!-- use dynamic configuration and fetch configuration of nodes from cluster (auto discovery node feature is enabled) -->
+     <property name="clientMode" value="#T(net.spy.memcached.ClientMode).Dynamic}" />
+ </bean>
+}}}
+In this mode, the set of cache node endpoints and any updates to it is dynamically managed. The client is initialized with a configuration endpoint and will periodically learn about the cache nodes in the cluster.
+
 
 
 = Additional Information =
