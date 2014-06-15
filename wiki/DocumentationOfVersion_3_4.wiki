@@ -1,4 +1,4 @@
-#summary Useful information about version 3.3.0
+#summary Useful information about version 3.4.0
 #labels Deprecated
 
 <wiki:toc max_depth="3" />
