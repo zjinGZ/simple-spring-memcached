@@ -11,6 +11,9 @@
 
 == 3.6.0 (In Progress) ==
   * [https://github.com/ragnor/simple-spring-memcached/issues/37 Issue 37]: Simple hash-code based strategy
+  * [https://github.com/ragnor/simple-spring-memcached/issues/38 Issue 38]: Support objects greater than 1MB  (*Done*)
+  * [https://github.com/ragnor/simple-spring-memcached/issues/39 Issue 39]: Disable SSM via property (*Done*)
+  * [https://github.com/ragnor/simple-spring-memcached/issues/40 Issue 40]: Support binary protocol in jmemcached-maven-plugin (*Done*)
 
 == 3.5.0 (Done) ==
   * Add new provider for [https://github.com/amazonwebservices/aws-elasticache-cluster-client-memcached-for-java AWS ElastiCache Cluster Client] (*Done*)
