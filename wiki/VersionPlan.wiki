@@ -11,7 +11,7 @@
 
 == 3.6.0 (In Progress) ==
   * [https://github.com/ragnor/simple-spring-memcached/issues/37 Issue 37]: Simple hash-code based strategy (*In Progress*)
-  *  ~~[https://github.com/ragnor/simple-spring-memcached/issues/38 Issue 38] ~~: Support objects greater than 1MB  (*Done*)
+  *  ~~[https://github.com/ragnor/simple-spring-memcached/issues/38 Issue 38]~~: Support objects greater than 1MB  (*Done*)
   *  ~~[https://github.com/ragnor/simple-spring-memcached/issues/39 Issue 39]~~: Disable SSM via property (*Done*)
   *  ~~[https://github.com/ragnor/simple-spring-memcached/issues/40 Issue 40]~~: Support binary protocol in jmemcached-maven-plugin (*Done*)
   *  ~~[https://github.com/ragnor/simple-spring-memcached/issues/43 Issue 43]~~: Fix compatibility issue with Spring 4.1 Cache Abstraction (*Done*)
