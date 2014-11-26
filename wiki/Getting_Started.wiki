@@ -320,7 +320,7 @@ Similar to standard usage of SSM you need to choose one of available java memcac
 }}}
 
 == Settings ==
-If SSM is used only through Spring 3.1 Cache abstraction importing `simplesm-context.xml` is not required. 
+Even if SSM is used only through Spring 3.1 Cache abstraction importing `simplesm-context.xml` or at least creating of `com.google.code.ssm.aop.CacheBase` bean is required. 
 
 Annotations provided by Spring 3.1 Cache abstraction ([http://static.springsource.org/spring/docs/3.1.x/javadoc-api/index.html?org/springframework/cache/annotation/Cacheable.html @Cacheable] and [http://static.springsource.org/spring/docs/3.1.x/javadoc-api/index.html?org/springframework/cache/annotation/CachePut.html @CachePut]) don't allow to pass expiration time. SSM and memcached required expiration time in some operations so it has to be set somehow. The simplest way is to set default expiration time on cache while creating `SSMCache` object. This expiration will be used in all operations on the cache. 
 
