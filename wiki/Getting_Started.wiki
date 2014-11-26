@@ -371,6 +371,8 @@ Memcached doesn't support cache zones or cache namespaces, so there's no such op
     <property name="configuration">
       <bean class="com.google.code.ssm.providers.CacheConfiguration">
         <property name="consistentHashing" value="true" />
+        <!-- spring can produce keys that contain unacceptable characters -->
+        <property name="useBinaryProtocol" value="true" />
       </bean>
     </property>
   </bean>
@@ -420,6 +422,8 @@ Memcached doesn't support cache zones or cache namespaces, so there's no such op
     <property name="configuration">
       <bean class="com.google.code.ssm.providers.CacheConfiguration">
         <property name="consistentHashing" value="true" />
+        <!-- spring can produce keys that contain unacceptable characters -->
+        <property name="useBinaryProtocol" value="true" />
       </bean>
     </property>
   </bean>
@@ -471,6 +475,8 @@ Memcached doesn't support cache zones or cache namespaces, so there's no such op
         <property name="consistentHashing" value="true" />
         <!-- in this use static configuration and do not try to fetch configuration of nodes from cluster (auto discovery node feature is disabled) -->
 	<property name="clientMode" value="#T(net.spy.memcached.ClientMode).Static}" />
+        <!-- spring can produce keys that contain unacceptable characters -->
+        <property name="useBinaryProtocol" value="true" />
       </bean>
     </property>
   </bean>
