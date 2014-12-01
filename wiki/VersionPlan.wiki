@@ -14,6 +14,7 @@
   *  ~~[https://github.com/ragnor/simple-spring-memcached/issues/38 Issue 38]~~: Support objects greater than 1MB  (*Done*)
   *  ~~[https://github.com/ragnor/simple-spring-memcached/issues/39 Issue 39]~~: Disable SSM via property (*Done*)
   *  ~~[https://github.com/ragnor/simple-spring-memcached/issues/40 Issue 40]~~: Support binary protocol in jmemcached-maven-plugin (*Done*)
+  * ~~ [https://github.com/ragnor/simple-spring-memcached/issues/42 Issue 42]~~: When using cache name or alias as a prefix in key, @ReadThroughMultiCache does not work properly (*Done*)
   *  ~~[https://github.com/ragnor/simple-spring-memcached/issues/43 Issue 43]~~: Fix compatibility issue with Spring 4.1 Cache Abstraction (*Done*)
 
 == 3.5.0 (Done) ==
