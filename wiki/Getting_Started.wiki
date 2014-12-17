@@ -170,7 +170,7 @@ In order to tell Simple-Spring-Memcached about the specifics of *your* environme
       <bean class="com.google.code.ssm.providers.elasticache.ElastiCacheConfiguration">
         <property name="consistentHashing" value="true" />
         <!-- in this use static configuration and do not try to fetch configuration of nodes from cluster (auto discovery node feature is disabled) -->
-	<property name="clientMode" value="#T(net.spy.memcached.ClientMode).Static}" />
+	<property name="clientMode" value="#{T(net.spy.memcached.ClientMode).Static}" />
       </bean>
     </property>
   </bean>
@@ -359,7 +359,7 @@ Memcached doesn't support cache zones or cache namespaces, so there's no such op
   </bean>
 
   <bean name="defaultCache" class="com.google.code.ssm.CacheFactory">
-    <property name="cacheName" value="defaultCache" />
+    <property name="cacheName" value="default" />
     <property name="cacheClientFactory">
       <bean name="cacheClientFactory" class="com.google.code.ssm.providers.spymemcached.MemcacheClientFactoryImpl" />
     </property>
@@ -410,7 +410,7 @@ Memcached doesn't support cache zones or cache namespaces, so there's no such op
   </bean>
 
   <bean name="defaultCache" class="com.google.code.ssm.CacheFactory">
-    <property name="cacheName" value="defaultCache" />
+    <property name="cacheName" value="default" />
     <property name="cacheClientFactory">
       <bean name="cacheClientFactory" class="com.google.code.ssm.providers.xmemcached.MemcacheClientFactoryImpl" />
     </property>
@@ -461,7 +461,7 @@ Memcached doesn't support cache zones or cache namespaces, so there's no such op
   </bean>
 
   <bean name="defaultCache" class="com.google.code.ssm.CacheFactory">
-    <property name="cacheName" value="defaultCache" />
+    <property name="cacheName" value="default" />
     <property name="cacheClientFactory">
       <bean name="cacheClientFactory" class="com.google.code.ssm.providers.elasticache.MemcacheClientFactoryImpl" />
     </property>
@@ -474,7 +474,7 @@ Memcached doesn't support cache zones or cache namespaces, so there's no such op
       <bean class="com.google.code.ssm.providers.elasticache.ElastiCacheConfiguration">
         <property name="consistentHashing" value="true" />
         <!-- in this use static configuration and do not try to fetch configuration of nodes from cluster (auto discovery node feature is disabled) -->
-	<property name="clientMode" value="#T(net.spy.memcached.ClientMode).Static}" />
+	<property name="clientMode" value="#{T(net.spy.memcached.ClientMode).Static}" />
         <!-- spring can produce keys that contain unacceptable characters -->
         <property name="useBinaryProtocol" value="true" />
       </bean>
@@ -518,7 +518,7 @@ One expiration time for all elements in cache may be insufficient when one cache
   </bean>
 
   <bean name="defaultCache" class="com.google.code.ssm.CacheFactory">
-    <property name="cacheName" value="defaultCache" />
+    <property name="cacheName" value="default" />
     <property name="cacheClientFactory">
       <bean name="cacheClientFactory" class="com.google.code.ssm.providers.xmemcached.MemcacheClientFactoryImpl" />
     </property>
@@ -537,8 +537,8 @@ One expiration time for all elements in cache may be insufficient when one cache
 }}}
 
 {{{
-// cache name: defaultCache, expiration: 600s instead of default 300s
-@Cacheable(value = "defaultCache#600", key = "#id")
+// cache name: default, expiration: 600s instead of default 300s
+@Cacheable(value = "default#600", key = "#id")
 public User getByPk(int id) {
   // ...
   return result;
@@ -573,7 +573,7 @@ and set mode to dynamic (configuration):
 {{{
  <bean class="com.google.code.ssm.providers.elasticache.ElastiCacheConfiguration">
      <!-- use dynamic configuration and fetch configuration of nodes from cluster (auto discovery node feature is enabled) -->
-     <property name="clientMode" value="#T(net.spy.memcached.ClientMode).Dynamic}" />
+     <property name="clientMode" value="#{T(net.spy.memcached.ClientMode).Dynamic}" />
  </bean>
 }}}
 In this mode, the set of cache node endpoints and any updates to it is dynamically managed. The client is initialized with a configuration endpoint and will periodically learn about the cache nodes in the cluster.
