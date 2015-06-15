@@ -162,8 +162,10 @@ In order to tell Simple-Spring-Memcached about the specifics of *your* environme
       <bean name="cacheClientFactory" class="com.google.code.ssm.providers.elasticache.MemcacheClientFactoryImpl" />
     </property>
     <property name="addressProvider">
+      <!-- it's not possible to connect to AWS memcached from local/developer machine. It will work only when an application 
+           is deployed on AWS cloud -->
       <bean class="com.google.code.ssm.config.DefaultAddressProvider">
-        <property name="address" value="127.0.0.1:11211" />
+        <property name="address" value="xxxxx.yyyyy.zzzz.cache.amazonaws.com:11211" />
       </bean>
     </property>
     <property name="configuration">
@@ -466,8 +468,10 @@ Memcached doesn't support cache zones or cache namespaces, so there's no such op
       <bean name="cacheClientFactory" class="com.google.code.ssm.providers.elasticache.MemcacheClientFactoryImpl" />
     </property>
     <property name="addressProvider">
+      <!-- it's not possible to connect to AWS memcached from local/developer machine. It will work only when an application
+             is deployed on AWS cloud -->
       <bean class="com.google.code.ssm.config.DefaultAddressProvider">
-        <property name="address" value="127.0.0.1:11211" />
+        <property name="address" value="xxxxx.yyyyy.zzzz.cache.amazonaws.com:11211" />
       </bean>
     </property>
     <property name="configuration">
