@@ -582,6 +582,8 @@ and set mode to dynamic (configuration):
 }}}
 In this mode, the set of cache node endpoints and any updates to it is dynamically managed. The client is initialized with a configuration endpoint and will periodically learn about the cache nodes in the cluster.
 
+Keep in mind that due to Amazon security policy it's not possible to connect to Amazon Cache Cluster (memcached) from local/developer machine. To make it work an application has to be deployed on Amazon.
+
 
 
 = Additional Information =
